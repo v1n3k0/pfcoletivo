@@ -1,4 +1,3 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -10,17 +9,35 @@
     <body>
         <div align="center">
         <h3>Login</h3>
-        <form method = "post" action = "/Biblioteca/LoginAuthentication">
-            <p>Código: <input type = "text" name = "codigo" size = "11"></p>
-            <p>Senha: <input type = "password" name = "senha" size = "12"></p>
-            <input type="hidden" name="flag" value="1">
-            <p>
-                <input type = "submit" name = "Submit" value = "Submit">
-                <input type = "reset" value = "Reset">
-            </p>
-        </form>
-        </div>
-        
+       <form class="form-horizontal">
+		  <div class="form-group">
+		    <label for="inputEmail3" class="col-sm-4 control-label">Email</label>
+		    <div class="col-sm-4">
+		      <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label for="inputPassword3" class="col-sm-4 control-label">Password</label>
+		    <div class="col-sm-4">
+		      <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <div class="col-sm-offset-2 col-sm-8">
+		      <div class="checkbox">
+		        <label>
+		          <input type="checkbox"> Remember me
+		        </label>
+		      </div>
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <div class="col-sm-offset-2 col-sm-8">
+		      <button type="submit" class="btn btn-default">Sign in</button>
+		    </div>
+		  </div>
+		</form>
+        </div>        
         <script src="js/bootstrap.min.js"></script>
-        </body>
+    </body>
 </html>
