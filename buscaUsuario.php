@@ -2,17 +2,14 @@
 
 <?php
 
-if(isset($_GET['login']) || isset($_GET['nome']))
+if(isset($_GET['busca']))
 {	
-	$login = $_GET['login'];
-	$nome = $_GET['nome'];
-	if (($login == NULL) && ($nome == NULL)){
+	$busca = $_GET['busca'];
+	if ($busca == NULL){
 					$result = mysqli_query($con, "SELECT * FROM usuario");	
 	}
-	elseif(isset($_GET['login'])){
-		$result = mysqli_query($con, "SELECT * FROM usuario WHERE login like '$login%'");	
-	}elseif(isset($_GET['nome'])){
-		$result = mysqli_query($con, "SELECT * FROM usuario WHERE nome like '$nome%'");
+	elseif(isset($_GET['busca'])){
+		$result = mysqli_query($con, "SELECT * FROM usuario WHERE login like '%$busca%' or nome like '%$busca%'");	
 	}
 }
 
@@ -25,15 +22,9 @@ if(isset($_GET['login']) || isset($_GET['nome']))
 			<div class="panel-body">
 			<form class="form-horizontal" method="GET" action="buscaUsuario.php" >
 					<div class="form-group">
-					    <label class="col-md-4 control-label">Login</label>
+					    <label class="col-md-4 control-label">Busca</label>
 						<div class="col-md-8">
-						   	<input type="text" class="form-control" name="login" placeholder="Nickname">
-						</div>
-					</div>
-					<div class="form-group">
-					    <label class="col-md-4 control-label">Nome</label>
-						<div class="col-md-8">
-						   	<input type="text" class="form-control" name="nome" placeholder="Nome usuário">
+						   	<input type="text" class="form-control" name="busca" placeholder="Palavra-chave">
 						</div>
 					</div>
 					<div class="form-group">
