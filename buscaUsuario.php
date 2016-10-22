@@ -1,7 +1,7 @@
 <?php include_once("header.php") ?>
 
 <?php 
-
+$nome;
 if(isset($_GET['login']))
 {
 	$login = $_GET['login'];
@@ -28,8 +28,6 @@ if(isset($_GET['login']))
 						<div class="form-group col-md-6">
 							<label for="login">Login usuario</label>
 							<input type="text" id="login" name="login" class="form-control" value=<?php if(isset($_GET['login'])) echo $login ?>>
-						</div> <br><br><br><br>
-						<div class="form-group col-md-6">
 							<label for="nome">Nome usuario</label>
 							<input type="text" id="nome" name="nome" class="form-control" value=<?php if(isset($_GET['nome'])) echo $nome ?>>
 						</div>
