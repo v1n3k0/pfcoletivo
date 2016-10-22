@@ -16,7 +16,7 @@
 				$tipo = $registro["tipo"];
 				session_start();
 				$_SESSION["cpf"] = $cpf;
-				$_SESSION["nome"] = $nome;
+				$_SESSION["login"] = $login;
 				$_SESSION["tipo"] = $tipo;
 				
 			

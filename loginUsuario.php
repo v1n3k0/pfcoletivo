@@ -6,15 +6,26 @@
 				echo "<CENTER> <FONT color='red'>$erro</FONT></CENTER>";
 			}
 		 ?>
-	
-    	<div align="center" class="row">
-    		<div class="col-md-1 col-md-offset-4">
-    			<img src="image/LogoEFEI.png" alt="Logo Unifei" class="img-responsive">
-    		</div>
-    		<div class="col-md-2">
-    			<h2 class="text-center">UNIFunda <br> <small>UNIFEI</small></h2>
-    		</div>
-    	</div>
+
+		<div class="mensagme text-center">
+			<?php 
+					
+			if(isset($_GET['error']))
+			{
+				?> 
+					<span style="color:red"><?php echo $_GET['error'] ?></span>
+				<?php
+			} 
+			else if(isset($_GET['success']))
+			{
+				?> 
+					<span style="color:green"><?php echo $_GET['success'] ?></span>
+				<?php
+			}
+
+
+				?>
+			</div>
 
     	<div class="row col-md-6 col-md-offset-3">
 	        <div align="center" class="panel panel-primary">
@@ -47,26 +58,4 @@
 		        </div>
 	        </div>
     	</div>
-    	<div class="row col-md-6 col-md-offset-4">
-			<div class="mensagme">
-				<?php 
-					
-				if(isset($_GET['error']))
-				{
-					?> 
-						<span style="color:red"><?php echo $_GET['error'] ?></span>
-					<?php
-				} 
-				else if(isset($_GET['success']))
-				{
-					?> 
-						<span style="color:green"><?php echo $_GET['success'] ?></span>
-					<?php
-				}
-
-
-				?>
-			</div>
-		</div>
-
 <?php include_once("footer.php") ?>

@@ -5,35 +5,63 @@
 <head>
 	<title>UNIFunda</title>
 
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
-	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<link rel="stylesheet"  href="css/bootstrap.css">
+	<link rel="stylesheet"  href="css/bootstrap-theme.css">
 </head>
 <body>
+
+<?php 
+	session_start();
+?>
 
 <div class="container">
 	<div class="col-md-10 col-md-offset-1">
 	<nav class="navbar navbar-default">
-		<ul class="nav navbar-nav">
-			<li>
-				<a href="index.php">HOME</a>
-			</li>
-			<li>
-				<a href="buscar_genero.php">Filmes por Gênero</a>
-			</li>
-			<li>
-				<a href="buscar.php">Buscar Filme</a>
-			</li>
-			<li>
-				<a href="loginUsuario.php">Cadastrar</a>
-			</li>
-			<li>
-				<a href="buscaUsuario.php">Consultar</a>
-			</li>
-			
-		</ul>
+		<div class="container-fluid">
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li>
+						<a href="index.php" class="navbar-brand">HOME</a>
+					</li>
+					<li>
+						<li class="dropdown">
+				        	<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Usuario <span class="caret"></span></a>
+				         	<ul class="dropdown-menu">
+				            <li><a href="buscaUsuario.php">Consultar</a></li>
+				            <li><a href="#">Alterar</a></li>
+				            <li><a href="#">Desativar</a></li>
+				          </ul>
+				        </li>
+					</li>
+					<li>
+						<li class="dropdown">
+				        	<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Projeto <span class="caret"></span></a>
+				         	<ul class="dropdown-menu">
+				         	<li><a href="#">Cadastrar</a></li>
+				            <li><a href="#">Consultar</a></li>
+				            <li><a href="#">Alterar</a></li>
+				            <li><a href="#">Remover</a></li>
+				          </ul>
+				        </li>
+					</li>
+				</ul>
+				<?php if( ! isset($_SESSION["login"])){ ?>
+				<ul class="nav navbar-nav navbar-right">
+					<li>
+						<a href="loginUsuario.php">Entrar</a>
+					</li>
+				</ul>
+				<?php }else{ ?>
+				<ul class="nav navbar-nav navbar-right">
+					<li>
+						<a href="sair.php">Sair</a>
+					</li>
+				</ul>
+				<?php } ?>
+			</div>
+		</div>
 	</nav>
-
+	
 
 
 	
