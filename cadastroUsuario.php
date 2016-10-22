@@ -1,5 +1,5 @@
 <?php include_once("header.php") ?>
-<div class="mensagme">
+<div class="mensagme text-center">
 	<?php 
 
 	if(isset($_GET['error']))
