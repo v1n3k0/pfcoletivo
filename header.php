@@ -27,6 +27,9 @@
 			<li>
 				<a href="loginUsuario.php">Cadastrar</a>
 			</li>
+			<li>
+				<a href="buscaUsuario.php">Consultar</a>
+			</li>
 			
 		</ul>
 	</nav>
