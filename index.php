@@ -1,5 +1,13 @@
 <?php include_once("header.php") ?>
+<?php
+session_start();
+$nome = $_SESSION["nome"];
 
+	echo ("hahahaha" + $nome);
+ ?>
+
+		</div>
+	</div>
 
     	<div align="center" class="row">
     		<div class="col-md-1 col-md-offset-4">

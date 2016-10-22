@@ -15,7 +15,6 @@
 	$email = $_POST['email'];
 	$financiador = "financiador";
 	$status = "ativo";
-		echo ("$senha, $cpf");
 
 
 	if( $senha == $r_senha){

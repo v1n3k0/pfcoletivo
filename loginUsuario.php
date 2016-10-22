@@ -15,17 +15,17 @@
 		        	<h3 class="panel-title"> Entrar no UNIFunda </h3>
 		        </div>	        
 		        <div class="panel-body">
-			        <form class="form-horizontal">
+			        <form class="form-horizontal" method="POST" action="validaUsuario.php">
 					  <div class="form-group">
 					    <label for="inputEmail3" class="col-md-2 col-md-offset-1 control-label">Login</label>
 					    <div class="col-md-7">
-					      <input type="text" class="form-control" id="exampleInputName" placeholder="Nickname">
+					      <input type="text" class="form-control" name="login" placeholder="Nickname">
 					    </div>
 					  </div>
 					  <div class="form-group">
 					    <label for="inputPassword3" class="col-md-2 col-md-offset-1 control-label">Senha</label>
 					    <div class="col-md-7">
-					      <input type="password" class="form-control" id="inputPassword3" placeholder="Senha">
+					      <input type="password" class="form-control" name="senha" placeholder="Senha">
 					    </div>
 					  </div>
 					  <div class="form-group">
@@ -40,5 +40,26 @@
 		        </div>
 	        </div>
     	</div>
+    	<div class="row col-md-6 col-md-offset-4">
+			<div class="mensagme">
+				<?php 
+					
+				if(isset($_GET['error']))
+				{
+					?> 
+						<span style="color:red"><?php echo $_GET['error'] ?></span>
+					<?php
+				} 
+				else if(isset($_GET['success']))
+				{
+					?> 
+						<span style="color:green"><?php echo $_GET['success'] ?></span>
+					<?php
+				}
+
+
+				?>
+			</div>
+		</div>
 
 <?php include_once("footer.php") ?>
