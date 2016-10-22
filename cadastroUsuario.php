@@ -74,18 +74,19 @@
 						</div>
 					</div>
 					<div class="form-group">
-					    <label class="col-md-4	 control-label">*Categoria</label>
-						<div class="col-md-8">
-						   	<select class="form-control" id="categoria">
-								<option>1</option>
-								<option>2</option>
-								<option>3</option>
-								<option>4</option>
-								<option>5</option>
-							</select>
-						</div>
+					    <div class="col-md-8 col-md-offset-4">
+						   	<p class="text-danger">(*) campos de preenchimento obrigatório</p>
+					    </div>
+					</div>
+					<div class="form-group">
+					    <div class="col-md-1 col-md-offset-9">
+					      <button type="submit" class="btn btn-default">Cadastrar</button>
+					    </div>
 					</div>
 				</form>
+				<div class="row">
+
+				</div>
 			</div>
 		</div>
     </div>
