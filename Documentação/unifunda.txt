@@ -4,12 +4,13 @@ CREATE TABLE `usuario` (
   `nome` varchar(255) NOT NULL,
   `cpf` int(11) NOT NULL,
   `pais` varchar(64) NOT NULL,
+  `cidade` varchar(255) NOT NULL,
   `estado` varchar(2) NOT NULL,
   `endereco` varchar(255) NOT NULL,
   `data_n` varchar(10) NOT NULL,
   `email` varchar(64) NOT NULL,
   `tipo` varchar(50) NOT NULL,
-  `categoria` varchar(50) NOT NULL
+  `categoria` varchar(50)
 
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 

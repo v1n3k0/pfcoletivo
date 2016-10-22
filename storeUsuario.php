@@ -13,7 +13,7 @@
 	$endereco = $_POST['endereco'];
 	$dataNascimento = $_POST['dataNascimento'];
 	$email = $_POST['email'];
-	
+	$financiador = 'financiador';
 		echo ("$senha, $cpf");
 
 
@@ -27,12 +27,12 @@
 		}
 		else
 		{
-			$sql = "INSERT INTO usuario ('login','senha','nome','cpf','pais','cidade','estado','endereco','data_n','email','tipo') VALUES ('$login', '$senha', '$nome', '$cpf', '$pais', '$cidade', '$estado', '$endereco', '$dataNascimento', '$email', 'financiador externo')";
+			$sql = "INSERT INTO usuario (login,senha,nome,cpf,pais,cidade,estado,endereco,data_n,email,tipo) VALUES ('$login', '$senha', '$nome', '$cpf', '$pais', '$cidade', '$estado', '$endereco', '$dataNascimento', '$email', '$financiador')";
 
 			mysqli_query($con, $sql);
 
 			
-			header("Location: cadastroUsuario.php?success=Usuario Inserido com sucesso!");
+			header("Location: cadastroUsuario.php?success=Usuario Inserido com sucesso! '$financiador");
 		}
 	} else {
 		header("Location: cadastroUsuario.php?error=Senhas não conferem");	
