@@ -1,22 +1,20 @@
 <?php include_once("header.php") ?>
 
-<?php 
-if((!isset($_GET['login'])) && (!isset($_GET['nome'])) ){
-	$result = mysqli_query($con, "SELECT * FROM usuario");	
-}
-if(isset($_GET['login']))
-{
+<?php
+
+if(isset($_GET['login']) || isset($_GET['nome']))
+{	
 	$login = $_GET['login'];
-
-	$result = mysqli_query($con, "SELECT * FROM usuario WHERE login = '$login'");
-} 
-if (isset($_GET['nome']))
-{
 	$nome = $_GET['nome'];
-
-	$result1 = mysqli_query($con, "SELECT * FROM usuario WHERE nome = '$nome'");
+	if (($login == NULL) && ($nome == NULL)){
+					$result = mysqli_query($con, "SELECT * FROM usuario");	
+	}
+	elseif(isset($_GET['login'])){
+		$result = mysqli_query($con, "SELECT * FROM usuario WHERE login like '$login%'");	
+	}elseif(isset($_GET['nome'])){
+		$result = mysqli_query($con, "SELECT * FROM usuario WHERE nome like '$nome%'");
+	}
 }
- 
 
 ?>
 	 <div class="col-md-8 col-md-offset-2">    	
@@ -77,35 +75,7 @@ if (isset($_GET['nome']))
 				<?php
 			}
 			?></table> <?php	
-		}
-		elseif (isset($result1)) {
-			if(mysqli_num_rows($result1) > 0)
-				$aux = 1;
-			{
-				?><table class="table table-hover">
-						<tr>
-							<td><b>Login</b></td>
-							<td><b>Nome</b></td>
-						</tr>
-				<?php
-				while($usuario = mysqli_fetch_object($result1))
-				{
-					?>
-					<div class="row" style="margin-bottom: 20px;">
-					<div class="col-md-10">
-						<tr>
-							<td><span class="detalhes"><a href="dadosUsuario.php?cpf=<?php echo $usuario->cpf; ?>"><?php echo $usuario->login ?></a></span><br></td>
-							<td><span class="detalhes"><a href="dadosUsuario.php?cpf=<?php echo $usuario->cpf; ?>"><?php echo $usuario->nome ?></a></span><br>
-						</td>
-						</tr>
-					</div>
-					</div>
-					
-					<?php
-				}
-				?></table> <?php	
-			}
-		}elseif($aux = 0)
+		}else
 		{		
 			echo "Nenhum usuario encontrado<b></b>";
 		}
