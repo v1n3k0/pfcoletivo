@@ -2,7 +2,7 @@ CREATE TABLE `usuario` (
   `login` varchar(50) NOT NULL,
   `senha` varchar(32) NOT NULL,
   `nome` varchar(255) NOT NULL,
-  `cpf` bigint(11) NOT NULL,
+  `cpf` bigint(11) NOT NULL PRIMARY KEY,
   `pais` varchar(64) NOT NULL,
   `cidade` varchar(255) NOT NULL,
   `estado` varchar(2) NOT NULL,
@@ -16,19 +16,13 @@ CREATE TABLE `usuario` (
 
 CREATE TABLE `projeto` (
   `cpf` bigint(11) NOT NULL,
-  `codigo` bigint(11) NOT NULL AUTO_INCREMENT,
+  `codigo` bigint(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
   `nome_p` varchar(100) NOT NULL,
   `categoria` varchar(100) NOT NULL,
   `duracao` int(11) NOT NULL,
   `valor` double NOT NULL,
   `status` varchar(32) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-ALTER TABLE `usuario`
-  ADD PRIMARY KEY (`cpf`);
-
-ALTER TABLE `projeto`
-  ADD PRIMARY KEY (`codigo`);
 
 ALTER TABLE `projeto`
   ADD CONSTRAINT `fk_cpf` FOREIGN KEY (`cpf`) REFERENCES `usuario` (`cpf`);
