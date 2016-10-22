@@ -16,10 +16,10 @@ CREATE TABLE `usuario` (
 
 CREATE TABLE `projeto` (
   `cpf` bigint(11) NOT NULL,
-  `codigo` int(11) NOT NULL,
+  `codigo` bigint(11) NOT NULL AUTO_INCREMENT,
   `nome_p` varchar(100) NOT NULL,
   `categoria` varchar(100) NOT NULL,
-  `duracao` int NOT NULL,
+  `duracao` int(11) NOT NULL,
   `valor` double NOT NULL,
   `status` varchar(32) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
