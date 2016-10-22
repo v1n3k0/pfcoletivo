@@ -1,7 +1,9 @@
 <?php include_once("header.php") ?>
 
 <?php 
-
+if((!isset($_GET['login'])) && (!isset($_GET['nome'])) ){
+	$result = mysqli_query($con, "SELECT * FROM usuario");	
+}
 if(isset($_GET['login']))
 {
 	$login = $_GET['login'];
@@ -64,10 +66,11 @@ if (isset($_GET['nome']))
 				?>
 				<div class="row" style="margin-bottom: 20px;">
 				<div class="col-md-10">
-					
+					<tr>
 						<td><span class="detalhes"><a href="dadosUsuario.php?cpf=<?php echo $usuario->cpf; ?>"><?php echo $usuario->login ?></a></span><br></td>
 						<td><span class="detalhes"><a href="dadosUsuario.php?cpf=<?php echo $usuario->cpf; ?>"><?php echo $usuario->nome ?></a></span><br>
 					</td>
+					</tr>
 				</div>
 				</div>
 				
@@ -90,9 +93,11 @@ if (isset($_GET['nome']))
 					?>
 					<div class="row" style="margin-bottom: 20px;">
 					<div class="col-md-10">
+						<tr>
 							<td><span class="detalhes"><a href="dadosUsuario.php?cpf=<?php echo $usuario->cpf; ?>"><?php echo $usuario->login ?></a></span><br></td>
 							<td><span class="detalhes"><a href="dadosUsuario.php?cpf=<?php echo $usuario->cpf; ?>"><?php echo $usuario->nome ?></a></span><br>
 						</td>
+						</tr>
 					</div>
 					</div>
 					
