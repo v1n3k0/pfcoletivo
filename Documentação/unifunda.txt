@@ -2,7 +2,7 @@ CREATE TABLE `usuario` (
   `login` varchar(50) NOT NULL,
   `senha` varchar(32) NOT NULL,
   `nome` varchar(255) NOT NULL,
-  `cpf` int(11) NOT NULL,
+  `cpf` bigint(11) NOT NULL,
   `pais` varchar(64) NOT NULL,
   `cidade` varchar(255) NOT NULL,
   `estado` varchar(2) NOT NULL,
@@ -15,7 +15,7 @@ CREATE TABLE `usuario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE `projeto` (
-  `cpf` int(11) NOT NULL,
+  `cpf` bigint(11) NOT NULL,
   `codigo` int(11) NOT NULL,
   `nome_p` varchar(100) NOT NULL,
   `categoria` varchar(100) NOT NULL,
