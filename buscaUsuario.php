@@ -52,36 +52,53 @@ if (isset($_GET['nome']))
 	{		
 		if(mysqli_num_rows($result) > 0)
 		{
-			$aux = 1;
+		
+			?><table class="table table-hover">
+					<tr>
+						<td><b>Login</b></td>
+						<td><b>Nome</b></td>
+					</tr>
+			<?php
 			while($usuario = mysqli_fetch_object($result))
 			{
 				?>
 				<div class="row" style="margin-bottom: 20px;">
 				<div class="col-md-10">
-					<span class="detalhes"><b>Login: </b><?php echo $usuario->login ?></span><br>
-					<span class="detalhes"><b>Nome: </b><?php echo $usuario->nome ?></span><br>
+					
+						<td><span class="detalhes"><a href="dadosUsuario.php?cpf=<?php echo $usuario->cpf; ?>"><?php echo $usuario->login ?></a></span><br></td>
+						<td><span class="detalhes"><a href="dadosUsuario.php?cpf=<?php echo $usuario->cpf; ?>"><?php echo $usuario->nome ?></a></span><br>
+					</td>
 				</div>
 				</div>
-				<hr>
+				
 				<?php
 			}
+			?></table> <?php	
 		}
 		elseif (isset($result1)) {
 			if(mysqli_num_rows($result1) > 0)
 				$aux = 1;
 			{
+				?><table class="table table-hover">
+						<tr>
+							<td><b>Login</b></td>
+							<td><b>Nome</b></td>
+						</tr>
+				<?php
 				while($usuario = mysqli_fetch_object($result1))
 				{
 					?>
 					<div class="row" style="margin-bottom: 20px;">
 					<div class="col-md-10">
-						<span class="detalhes"><b>Login: </b><?php echo $usuario->login ?></span><br>
-						<span class="detalhes"><b>Nome: </b><?php echo $usuario->nome ?></span><br>
+							<td><span class="detalhes"><a href="dadosUsuario.php?cpf=<?php echo $usuario->cpf; ?>"><?php echo $usuario->login ?></a></span><br></td>
+							<td><span class="detalhes"><a href="dadosUsuario.php?cpf=<?php echo $usuario->cpf; ?>"><?php echo $usuario->nome ?></a></span><br>
+						</td>
 					</div>
 					</div>
-					<hr>
+					
 					<?php
-				}	
+				}
+				?></table> <?php	
 			}
 		}elseif($aux = 0)
 		{		
