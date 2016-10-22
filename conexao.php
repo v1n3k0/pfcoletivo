@@ -4,7 +4,7 @@
 // mysql_selectdb("imdb");
 
 
-$con = mysqli_connect("localhost", "root", "root");
+$con = mysqli_connect("localhost", "root", "");
 
 if(!$con)
 {
