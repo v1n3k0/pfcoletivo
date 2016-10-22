@@ -14,6 +14,7 @@
 	$dataNascimento = $_POST['dataNascimento'];
 	$email = $_POST['email'];
 	$financiador = "financiador";
+	$status = "ativo";
 		echo ("$senha, $cpf");
 
 
@@ -27,7 +28,7 @@
 		}
 		else
 		{
-			$sql = "INSERT INTO usuario (login,senha,nome,cpf,pais,cidade,estado,endereco,data_n,email,tipo) VALUES ('$login', '$senha', '$nome', '$cpf', '$pais', '$cidade', '$estado', '$endereco', '$dataNascimento', '$email', '$financiador')";
+			$sql = "INSERT INTO usuario (login,senha,nome,cpf,pais,cidade,estado,endereco,data_n,email,tipo,status) VALUES ('$login', '$senha', '$nome', '$cpf', '$pais', '$cidade', '$estado', '$endereco', '$dataNascimento', '$email', '$financiador', '$status')";
 
 			mysqli_query($con, $sql);
 

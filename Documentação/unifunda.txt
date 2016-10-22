@@ -10,8 +10,8 @@ CREATE TABLE `usuario` (
   `data_n` varchar(10) NOT NULL,
   `email` varchar(64) NOT NULL,
   `tipo` varchar(50) NOT NULL,
-  `categoria` varchar(50)
-
+  `categoria` varchar(50) DEFAULT NULL,
+  `status` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE `projeto` (
