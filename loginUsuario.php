@@ -1,4 +1,11 @@
 <?php include_once("header.php") ?>
+
+		<?php 
+			if( isset($_GET["erro"]) ) {
+				$erro = $_GET["erro"];
+				echo "<CENTER> <FONT color='red'>$erro</FONT></CENTER>";
+			}
+		 ?>
 	
     	<div align="center" class="row">
     		<div class="col-md-1 col-md-offset-4">

@@ -7,16 +7,17 @@
 
 
 	
-		$result = mysqli_query($con, "SELECT * FROM usuario WHERE login = '$login' and senha = '$senha'");
+		$result = mysqli_query($con, "SELECT cpf, login, tipo FROM usuario WHERE login = '$login' and senha = '$senha'") or die("Erro ao pesquisar login" . mysqli_error());
 
-		if(mysqli_fetch_array($result))
+		if($registro = mysqli_fetch_assoc($result))
 		{
-			$usuario = mysqli_fetch_object($result);
-				$cpf = $usuario->cpf;
-				$nome = $usuario->nome;
+				$cpf = $registro["cpf"];
+				$nome = $registro["login"];
+				$tipo = $registro["tipo"];
 				session_start();
 				$_SESSION["cpf"] = $cpf;
 				$_SESSION["nome"] = $nome;
+				$_SESSION["tipo"] = $tipo;
 				
 			
 			header("Location: index.php");

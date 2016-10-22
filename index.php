@@ -1,10 +1,4 @@
 <?php include_once("header.php") ?>
-<?php
-session_start();
-$nome = $_SESSION["nome"];
-
-	echo ("hahahaha" + $nome);
- ?>
 
 		</div>
 	</div>
