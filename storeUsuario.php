@@ -13,7 +13,7 @@
 	$endereco = $_POST['endereco'];
 	$dataNascimento = $_POST['dataNascimento'];
 	$email = $_POST['email'];
-	$financiador = 'financiador';
+	$financiador = "financiador";
 		echo ("$senha, $cpf");
 
 
@@ -32,7 +32,7 @@
 			mysqli_query($con, $sql);
 
 			
-			header("Location: cadastroUsuario.php?success=Usuario Inserido com sucesso! '$financiador");
+			header("Location: cadastroUsuario.php?success=Usuario Inserido com sucesso!");
 		}
 	} else {
 		header("Location: cadastroUsuario.php?error=Senhas não conferem");	
