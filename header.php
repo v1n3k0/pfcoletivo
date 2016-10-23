@@ -28,7 +28,7 @@
 				        	<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Usuario <span class="caret"></span></a>
 				         	<ul class="dropdown-menu">
 				            <li><a href="buscaUsuario.php">Consultar</a></li>
-				            <li><a href="#">Alterar</a></li>
+				            <li><a href="alterarUsuario.php">Alterar</a></li>
 				            <li><a href="desativarUsuario.php">Desativar</a></li>
 				          </ul>
 				        </li>
