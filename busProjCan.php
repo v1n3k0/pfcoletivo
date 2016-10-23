@@ -7,7 +7,7 @@ if(isset($_GET['categoria']))
 {	
 	$cat = $_GET['categoria'];
 	$result = mysqli_query($con, "SELECT * FROM projeto where categoria = '$cat'");				
-	if ($cat == NULL){
+	if ($cat == "Default"){
 		if(isset($_GET['codigo'])){
 				$cod = $_GET['codigo'];
 				$result = mysqli_query($con, "SELECT * FROM projeto where codigo = '$cod' or nome_p like'%$cod%'");
@@ -30,6 +30,7 @@ if(isset($_GET['categoria']))
 					    <label class="row col-md-4 control-label">Busca por categoria</label>
 						<div class="col-md-8">
 							<select class="form-control" name="categoria">
+									<option value="Default">Selecionar Valor</option> 
 									<option value="Pesquisa">Pesquisa</option> 
 									<option value="Competição Tecnológica">Competição Tecnológica</option> 
 									<option value="Inovação no Ensino">Inovação no Ensino</option> 
@@ -37,6 +38,8 @@ if(isset($_GET['categoria']))
 									<option value="Pequenas Obras">Pequenas Obras</option>
 							</select>
 						</div>
+					</div>
+					<div class="form-group">
 						<label class="row col-md-4 control-label">Busca por codigo / nome</label>
 						<div class="col-md-8">
 						   	<input type="text" class="form-control" name="codigo" placeholder="Codigo ou nome">
@@ -88,7 +91,7 @@ if(isset($_GET['categoria']))
 					?></table> <?php	
 				}else
 				{		
-					echo "Nenhum usuario encontrado<b></b>";
+					echo "Nenhum projeto encontrado<b></b>";
 				}
 			}
 			?>
