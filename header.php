@@ -37,7 +37,7 @@
 						<li class="dropdown">
 				        	<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Projeto <span class="caret"></span></a>
 				         	<ul class="dropdown-menu">
-				         	<li><a href="#">Cadastrar</a></li>
+				         	<li><a href="cadastroProjeto.php">Cadastrar</a></li>
 				            <li><a href="#">Consultar</a></li>
 				            <li><a href="#">Alterar</a></li>
 				            <li><a href="#">Remover</a></li>

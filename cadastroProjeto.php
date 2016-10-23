@@ -1,5 +1,7 @@
 <?php include_once("header.php") ?>
-<div class="mensagme">
+<?php include_once("validar.php") ?>
+
+<div class="mensagme text-center">
 	<?php 
 
 	if(isset($_GET['error']))
@@ -17,6 +19,7 @@
 
 
 	?>
+</div>
 
 	<div class="col-md-8 col-md-offset-2">    	
 	   	<div class="panel panel-primary">
@@ -24,7 +27,7 @@
 					<h3 class="panel-title">Cadastrar de Projeto</h3>
 			</div>
 			<div class="panel-body">
-				<form class="form-horizontal" method="POST" action="#" >
+				<form class="form-horizontal" method="POST" action="cadastrarProjeto.php" >
 					<div class="form-group">
 					<label class="col-md-4	 control-label">*Nome do Projeto</label>
 						<div class="col-md-8">
