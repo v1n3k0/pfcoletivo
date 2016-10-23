@@ -1,4 +1,4 @@
-<?php include_once("../header_sub.php") ?>
+<?php include_once("../header.php") ?>
 
 <div class="mensagme text-center">
 	<?php 
@@ -80,6 +80,7 @@ $result = mysqli_query($con, "SELECT * FROM projeto WHERE codigo = '$cod'");
 
 ?>
 
+<?php if( $_SESSION["tipo"] == "gestor" ){ ?>
 <div class="row">
 	<div class="row col-md-7">
 		<div class="panel panel-primary">
@@ -93,7 +94,7 @@ $result = mysqli_query($con, "SELECT * FROM projeto WHERE codigo = '$cod'");
 					if(mysqli_num_rows($result) > 0)
 					{
 				?>
-				<form class="form-horizontal" method="POST" action="updateProjeto.php">
+				<form class="form-horizontal" method="POST" action="updateProjeto.php?codigo=<?php echo ($cod) ?>">
 					<?php
 					if($projeto = mysqli_fetch_object($result))
 					{
@@ -159,7 +160,7 @@ $result = mysqli_query($con, "SELECT * FROM projeto WHERE codigo = '$cod'");
 				<h3 class="panel-title">Remover dados do projeto</h3>
 			</div>
 			<div class="panel-body">
-			<form class="form-horizontal text-center" method="POST" action="?codigo='$cod'" >
+			<form class="form-horizontal text-center" method="POST" action="?codigo=<?php echo ($cod) ?>" >
 				<div class="form-group">
 					<div class="col-dm-4 col-dm-offset-4">
 							Deseja realmente remover o projeto do sistema ?
@@ -176,6 +177,7 @@ $result = mysqli_query($con, "SELECT * FROM projeto WHERE codigo = '$cod'");
 	</div>
 </div>
 
+<?php } ?>
 <?php
 	if(isset($_GET['codigo'])){
 
@@ -189,4 +191,4 @@ $result = mysqli_query($con, "SELECT * FROM projeto WHERE codigo = '$cod'");
 	}
  ?>
 
-<?php include_once("../footer_sub.php") ?>
+<?php include_once("../footer.php") ?>

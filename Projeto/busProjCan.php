@@ -1,4 +1,4 @@
-<?php include_once("../header_sub.php") ?>
+<?php include_once("../header.php") ?>
 <?php include_once("../validar.php") ?>
 
 <div class="mensagme text-center">
@@ -120,4 +120,4 @@ if(isset($_GET['categoria']))
 </div>
 
 
-<?php include_once("../footer_sub.php") ?>
+<?php include_once("../footer.php") ?>

@@ -1,4 +1,4 @@
-<?php include_once("../header_sub.php") ?>
+<?php include_once("../header.php") ?>
     <div class="jumbotron col-md-10 col-md-offset-1">
         <div align="center" class="row">
             <div class="col-md-3 col-md-offset-2">
@@ -13,4 +13,4 @@
         </div>  
     </div>
     
-<?php include_once("../footer_sub.php") ?>
+<?php include_once("../footer.php") ?>

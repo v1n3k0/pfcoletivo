@@ -1,4 +1,4 @@
-<?php include_once("../header_sub.php") ?>
+<?php include_once("../header.php") ?>
 
 
 		<?php 
@@ -59,4 +59,4 @@
 		        </div>
 	        </div>
     	</div>
-<?php include_once("../footer_sub.php") ?>
+<?php include_once("../footer.php") ?>
