@@ -2,7 +2,9 @@
 
 <?php 
 	
-	$cpf = $_POST["cpf"];
+	session_start();
+
+	$cpf = $_SESSION["cpf"];
 	$login  = $_POST['login'];
 	$senha  = $_POST['senha'];
 	$r_senha  = $_POST['repetirSenha'];

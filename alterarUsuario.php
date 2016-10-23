@@ -28,9 +28,7 @@ $result = mysqli_query($con, "SELECT * FROM usuario WHERE cpf = '$cpf'");
 				?>
 				<div class="row" style="margin-bottom: 20px;">
 				<div class="col-md-10">
-					<form class="form-horizontal" method="POST" action="updateUsuario.php" >
-							<td><input type="hidden" class="form-control" name="cpf"></td>
-							
+					<form class="form-horizontal" method="POST" action="updateUsuario.php" >							
 						<tr>
 							<td><span class="detalhes"><?php echo $usuario->login ?></a></span><br></td>
 							<td><input type="text" class="form-control" name="login" placeholder="Login" size="4"></td>
