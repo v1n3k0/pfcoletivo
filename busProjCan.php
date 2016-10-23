@@ -1,6 +1,26 @@
 <?php include_once("header.php") ?>
 <?php include_once("validar.php") ?>
 
+<div class="mensagme text-center">
+	<?php 
+
+	if(isset($_GET['error']))
+	{
+		?> 
+			<span style="color:red"><?php echo $_GET['error'] ?></span>
+		<?php
+	} 
+	else if(isset($_GET['success']))
+	{
+		?> 
+			<span style="color:green"><?php echo $_GET['success'] ?></span>
+		<?php
+	}
+
+
+	?>
+</div>
+
 <?php
 
 if(isset($_GET['categoria']))
@@ -44,9 +64,9 @@ if(isset($_GET['categoria']))
 						<div class="col-md-8">
 						   	<input type="text" class="form-control" name="codigo" placeholder="Codigo ou nome">
 						</div>
-						<div class="col-md-8">
-							<button type="submit" class="btn btn-default">Consultar</button>
-						</div>
+					</div>
+					<div class="col-md-8 col-md-offset-9">
+						<button type="submit" class="btn btn-default">Consultar</button>
 					</div>
 			</form>
 			</div>
