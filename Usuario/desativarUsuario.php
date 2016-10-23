@@ -1,8 +1,7 @@
 <?php include_once("../header_sub.php") ?>
 <?php include_once("../validar.php") ?>
 
-<link rel="stylesheet"  href="../css/bootstrap.css">
-<link rel="stylesheet"  href="../css/bootstrap-theme.css">
+
 <div class="text-center">
 	<?php 
 		if(isset($_GET['success']))
@@ -31,7 +30,7 @@
 							<button type="submit" class="btn btn-default">Sim</button>
 						</div>
 						<div class="col-md-2">					    	
-					      <a class="btn btn-default" href="index.php" role="button">Não</a>
+					      <a class="btn btn-default" href="../index.php" role="button">Não</a>
 					    </div>
 					</div>
 				</form>
@@ -47,7 +46,7 @@
 
 		mysqli_query($con, $sql);
 				
-		header("Location: Usuario/desativarUsuario.php?success=Usuario desativado com sucesso!");	
+		header("Location: desativarUsuario.php?success=Usuario desativado com sucesso!");	
 	}
  ?>
 

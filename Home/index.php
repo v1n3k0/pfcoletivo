@@ -1,8 +1,8 @@
-<?php include_once("header.php") ?>
+<?php include_once("../header_sub.php") ?>
     <div class="jumbotron col-md-10 col-md-offset-1">
         <div align="center" class="row">
             <div class="col-md-3 col-md-offset-2">
-                <img src="image/LogoEFEI.png" alt="Logo Unifei" class="img-responsive">
+                <img src="../image/LogoEFEI.png" alt="Logo Unifei" class="img-responsive">
             </div>
             <div class="col-md-5">
                 <h1 class="text-center">UNIFunda <small>Bem-vindo</small></h1>
@@ -13,4 +13,4 @@
         </div>  
     </div>
     
-<?php include_once("footer.php") ?>
+<?php include_once("../footer_sub.php") ?>

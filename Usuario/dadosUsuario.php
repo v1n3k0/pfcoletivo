@@ -1,6 +1,5 @@
 <?php include_once("../header_sub.php") ?>
-<link rel="stylesheet"  href="../css/bootstrap.css">
-<link rel="stylesheet"  href="../css/bootstrap-theme.css">
+
 <?php 
 
 $cpf = $_GET['cpf'];

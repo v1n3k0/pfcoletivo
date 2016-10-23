@@ -10,7 +10,7 @@
 
 		if(mysqli_fetch_array($res))
 		{
-			header("Location: Usuario/loginUsuario.php?error=Usuario desativado!");
+			header("Location: loginUsuario.php?error=Usuario desativado!");
 		}else{	
 			$result = mysqli_query($con, "SELECT cpf, login, tipo FROM usuario WHERE login = '$login' and senha = '$senha'") or die("Erro ao pesquisar login" . mysqli_error());
 
@@ -25,11 +25,11 @@
 					$_SESSION["tipo"] = $tipo;
 					
 				
-				header("Location: index.php");
+				header("Location: ../Home/index.php");
 			}
 			else
 			{
-				header("Location: Usuario/loginUsuario.php?error=Usuario e/ou senha inválidos!");
+				header("Location: loginUsuario.php?error=Usuario e/ou senha inválidos!");
 			}
 		}
 ?>

@@ -1,8 +1,6 @@
 <?php include_once("../header_sub.php") ?>
 <?php include_once("../validar.php") ?>
 
-<link rel="stylesheet"  href="../css/bootstrap.css">
-<link rel="stylesheet"  href="../css/bootstrap-theme.css">
 <?php
 
 if(isset($_GET['busca']))

@@ -21,7 +21,7 @@
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
 					<li>
-						<a href="../index.php" class="navbar-brand">HOME</a>
+						<a href="../Home/index.php" class="navbar-brand">HOME</a>
 					</li>
 					<li>
 						<li class="dropdown">

@@ -1,5 +1,3 @@
-<?php include_once("header.php") ?>
-<?php include_once("validar.php") ?>
 
 <?php 
 	session_start();
@@ -8,5 +6,3 @@
 
 	header("Location: index.php");
 ?>
-
-<?php include_once("footer.php") ?>
