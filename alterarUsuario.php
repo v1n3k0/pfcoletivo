@@ -1,6 +1,30 @@
 <?php include_once("header.php") ?>
 <?php include_once("validar.php") ?>
+		<?php 
+			if( isset($_GET["erro"]) ) {
+				$erro = $_GET["erro"];
+				echo "<CENTER> <FONT color='red'>$erro</FONT></CENTER>";
+			}
+		 ?>
 
+		<div class="mensagme text-center">
+			<?php 
+					
+			if(isset($_GET['error']))
+			{
+				?> 
+					<span style="color:red"><?php echo $_GET['error'] ?></span>
+				<?php
+			} 
+			else if(isset($_GET['success']))
+			{
+				?> 
+					<span style="color:green"><?php echo $_GET['success'] ?></span>
+				<?php
+			}
+
+
+				?>
 <?php 
 $cpf = $_SESSION["cpf"];
 
@@ -21,12 +45,13 @@ $result = mysqli_query($con, "SELECT * FROM usuario WHERE cpf = '$cpf'");
 				if($usuario = mysqli_fetch_object($result))
 				{
 					?>
+				<form class="form-horizontal" method="POST" action="updateUsuario.php" >
+						
 				<div class="panel panel-primary">
 					<div class="panel-heading">
 						<h3 class="panel-title">Dados pessoais</h3>				
 					</div>
 					<div class="panel-body">
-						<form class="form-horizontal" method="POST" action="updateUsuario.php" >
 							<div class="form-group">
 								<label class="col-md-3 control-label">Login</label>
 								<div class="col-md-8">
@@ -94,9 +119,22 @@ $result = mysqli_query($con, "SELECT * FROM usuario WHERE cpf = '$cpf'");
 								</div>
 							</div>
 							<div class="form-group">
-								<label class="col-md-3 control-label">Estado</label>
+								<label class="col-md-3 control-label">E-mail</label>
 								<div class="col-md-8">
 									<input type="email" class="form-control" name="email" placeholder=<?php echo $usuario->email ?>>
+								</div>
+							</div>
+					</div>
+				</div>
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h3 class="panel-title">Confirmação de senha</h3>				
+					</div>
+					<div class="panel-body">
+							<div class="form-group">
+								<label class="col-md-3 control-label">Confirmação de senha</label>
+								<div class="col-md-8">
+									<input type="password" class="form-control" name="senha_atual" placeholder="Senha Atual">
 								</div>
 							</div>
 							<div class="form-group">
@@ -104,10 +142,10 @@ $result = mysqli_query($con, "SELECT * FROM usuario WHERE cpf = '$cpf'");
 									<button type="submit" class="btn btn-default">Atualizar</button>
 								</div>
 							</div>
-						</form>
 					</div>
-				</div>
-			
+					</div>
+
+			</form>
 				<?php
 				}
 				?>
