@@ -12,14 +12,24 @@
 	$cidade = $_POST['cidade'];
 	$estado     = $_POST['estado'];
 	$email = $_POST['email'];
+	$sen = $_POST['senha_atual'];
 	
+	$result = mysqli_query($con, "SELECT * FROM usuario WHERE cpf = '$cpf'");
+	$usuario = mysqli_fetch_object($result);
 
-	if( $senha == $r_senha){
+
+	if( $usuario->senha == $sen){
 		if($login != NULL){
 			$result = mysqli_query($con, "UPDATE usuario set login='$login' where cpf='$cpf'");
 		}	
 		if($senha != NULL){
+			if($senha == $r_senha){
 			$result = mysqli_query($con, "UPDATE usuario set senha='$senha' where cpf='$cpf'");
+			
+			}else{
+				header("Location: alterarUsuario.php?error=Senhas não conferem!");		
+				exit();
+			}
 		}	
 		if($pais != NULL){
 			$result = mysqli_query($con, "UPDATE usuario set pais='$pais' where cpf='$cpf'");
@@ -33,9 +43,11 @@
 		if($email != NULL){
 			$result = mysqli_query($con, "UPDATE usuario set email='$email' where cpf='$cpf'");
 		}	
-			header("Location: alterarUsuario.php?success=Dados alterados com sucesso!");
+		
+		header("Location: alterarUsuario.php?success=Dados alterados com sucesso!");
+		
 	} else {
-		header("Location: alterarUsuario.php?error=Senhas não conferem");	
+		header("Location: alterarUsuario.php?error=Autenticação incorreta!");	
 	}
 
 ?>
