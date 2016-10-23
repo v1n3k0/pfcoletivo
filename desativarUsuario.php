@@ -32,7 +32,6 @@
 					      <a class="btn btn-default" href="index.php" role="button">Não</a>
 					    </div>
 					</div>
-					</form>
 				</form>
 			</div>
 		</div>
