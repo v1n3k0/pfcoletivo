@@ -1,4 +1,4 @@
-<?php include_once("conexao.php") ?>
+<?php include_once("../conexao.php") ?>
 
 <?php 
 	
@@ -23,7 +23,7 @@
 
 		if(mysqli_fetch_array($result))
 		{
-			header("Location: cadastroUsuario.php?error=Este código já existe");
+			header("Location: Usuario/cadastroUsuario.php?error=Este código já existe");
 		}
 		else
 		{
@@ -32,10 +32,10 @@
 			mysqli_query($con, $sql);
 
 			
-			header("Location: cadastroUsuario.php?success=Usuario Inserido com sucesso!");
+			header("Location: Usuario/cadastroUsuario.php?success=Usuario Inserido com sucesso!");
 		}
 	} else {
-		header("Location: cadastroUsuario.php?error=Senhas não conferem");	
+		header("Location: Usuario/cadastroUsuario.php?error=Senhas não conferem");	
 	}
 
 ?>

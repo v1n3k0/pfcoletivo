@@ -1,5 +1,6 @@
-<?php include_once("header.php") ?>
-
+<?php include_once("../header_sub.php") ?>
+<link rel="stylesheet"  href="../css/bootstrap.css">
+<link rel="stylesheet"  href="../css/bootstrap-theme.css">
 <?php 
 
 $cpf = $_GET['cpf'];
@@ -61,4 +62,4 @@ $result = mysqli_query($con, "SELECT * FROM usuario WHERE cpf = '$cpf'");
 </div>
 
 
-<?php include_once("footer.php") ?>
+<?php include_once("../footer_sub.php") ?>

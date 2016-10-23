@@ -5,8 +5,8 @@
 <head>
 	<title>UNIFunda</title>
 
-	<link rel="stylesheet"  href="css/bootstrap.css">
-	<link rel="stylesheet"  href="css/bootstrap-theme.css">
+	<link rel="stylesheet"  href="../css/bootstrap.css">
+	<link rel="stylesheet"  href="../css/bootstrap-theme.css">
 </head>
 <body>
 
@@ -21,15 +21,15 @@
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
 					<li>
-						<a href="index.php" class="navbar-brand">HOME</a>
+						<a href="../index.php" class="navbar-brand">HOME</a>
 					</li>
 					<li>
 						<li class="dropdown">
 				        	<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Usuario <span class="caret"></span></a>
 				         	<ul class="dropdown-menu">
-				            <li><a href="Usuario/buscaUsuario.php">Consultar</a></li>
-				            <li><a href="Usuario/alterarUsuario.php">Alterar</a></li>
-				            <li><a href="Usuario/desativarUsuario.php">Desativar</a></li>
+				            <li><a href="../Usuario/buscaUsuario.php">Consultar</a></li>
+				            <li><a href="../Usuario/alterarUsuario.php">Alterar</a></li>
+				            <li><a href="../Usuario/desativarUsuario.php">Desativar</a></li>
 				          </ul>
 				        </li>
 					</li>
@@ -37,8 +37,8 @@
 						<li class="dropdown">
 				        	<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Projeto <span class="caret"></span></a>
 				         	<ul class="dropdown-menu">
-				         	<li><a href="cadastroProjeto.php">Cadastrar</a></li>
-				            <li><a href="busProjCan.php">Consultar</a></li>
+				         	<li><a href="../Projeto/cadastroProjeto.php">Cadastrar</a></li>
+				            <li><a href="../Projeto/busProjCan.php">Consultar</a></li>
 				            <li><a href="#">Alterar</a></li>
 				            <li><a href="#">Remover</a></li>
 				          </ul>
@@ -48,13 +48,13 @@
 				<?php if( ! isset($_SESSION["login"])){ ?>
 				<ul class="nav navbar-nav navbar-right">
 					<li>
-						<a href="loginUsuario.php">Entrar</a>
+						<a href="../Usuario/loginUsuario.php">Entrar</a>
 					</li>
 				</ul>
 				<?php }else{ ?>
 				<ul class="nav navbar-nav navbar-right">
 					<li>
-						<a href="sair.php">Sair</a>
+						<a href="../sair.php">Sair</a>
 					</li>
 				</ul>
 				<?php } ?>

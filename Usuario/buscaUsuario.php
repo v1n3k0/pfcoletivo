@@ -1,6 +1,8 @@
-<?php include_once("header.php") ?>
-<?php include_once("validar.php") ?>
+<?php include_once("../header_sub.php") ?>
+<?php include_once("../validar.php") ?>
 
+<link rel="stylesheet"  href="../css/bootstrap.css">
+<link rel="stylesheet"  href="../css/bootstrap-theme.css">
 <?php
 
 if(isset($_GET['busca']))
@@ -40,7 +42,7 @@ if(isset($_GET['busca']))
 <div class="row ">
 	<div class="col-md-10 col-md-offset-1">
 			<?php 
-			$aux =0;
+			
 			if(isset($result))
 			{		
 				if(mysqli_num_rows($result) > 0)
@@ -79,4 +81,4 @@ if(isset($_GET['busca']))
 </div>
 
 
-<?php include_once("footer.php") ?>
+<?php include_once("../footer_sub.php") ?>

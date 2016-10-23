@@ -1,6 +1,8 @@
-<?php include_once("header.php") ?>
-<?php include_once("validar.php") ?>
+<?php include_once("../header_sub.php") ?>
+<?php include_once("../validar.php") ?>
 
+<link rel="stylesheet"  href="../css/bootstrap.css">
+<link rel="stylesheet"  href="../css/bootstrap-theme.css">
 <div class="text-center">
 	<?php 
 		if(isset($_GET['success']))
@@ -45,8 +47,8 @@
 
 		mysqli_query($con, $sql);
 				
-		header("Location: desativarUsuario.php?success=Usuario desativado com sucesso!");	
+		header("Location: Usuario/desativarUsuario.php?success=Usuario desativado com sucesso!");	
 	}
  ?>
 
-<?php include_once("footer.php") ?>
+<?php include_once("../footer_sub.php") ?>

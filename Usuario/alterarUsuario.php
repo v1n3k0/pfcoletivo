@@ -1,5 +1,8 @@
-<?php include_once("header.php") ?>
-<?php include_once("validar.php") ?>
+<?php include_once("../header_sub.php") ?>
+<?php include_once("../validar.php") ?>
+
+<link rel="stylesheet"  href="../css/bootstrap.css">
+<link rel="stylesheet"  href="../css/bootstrap-theme.css">
 		<?php 
 			if( isset($_GET["erro"]) ) {
 				$erro = $_GET["erro"];
@@ -45,7 +48,7 @@ $result = mysqli_query($con, "SELECT * FROM usuario WHERE cpf = '$cpf'");
 				if($usuario = mysqli_fetch_object($result))
 				{
 					?>
-				<form class="form-horizontal" method="POST" action="updateUsuario.php" >
+				<form class="form-horizontal" method="POST" action="Usuario/updateUsuario.php" >
 						
 				<div class="panel panel-primary">
 					<div class="panel-heading">
@@ -156,4 +159,4 @@ $result = mysqli_query($con, "SELECT * FROM usuario WHERE cpf = '$cpf'");
 	}
 	?>
 
-<?php include_once("footer.php") ?>
+<?php include_once("../footer_sub.php") ?>

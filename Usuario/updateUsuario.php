@@ -1,4 +1,4 @@
-<?php include_once("conexao.php") ?>
+<?php include_once("../conexao.php") ?>
 
 <?php 
 	
@@ -27,7 +27,7 @@
 			$result = mysqli_query($con, "UPDATE usuario set senha='$senha' where cpf='$cpf'");
 			
 			}else{
-				header("Location: alterarUsuario.php?error=Senhas não conferem!");		
+				header("Location: Usuario/alterarUsuario.php?error=Senhas não conferem!");		
 				exit();
 			}
 		}	
@@ -44,10 +44,10 @@
 			$result = mysqli_query($con, "UPDATE usuario set email='$email' where cpf='$cpf'");
 		}	
 		
-		header("Location: alterarUsuario.php?success=Dados alterados com sucesso!");
+		header("Location: Usuario/alterarUsuario.php?success=Dados alterados com sucesso!");
 		
 	} else {
-		header("Location: alterarUsuario.php?error=Autenticação incorreta!");	
+		header("Location: Usuario/alterarUsuario.php?error=Autenticação incorreta!");	
 	}
 
 ?>

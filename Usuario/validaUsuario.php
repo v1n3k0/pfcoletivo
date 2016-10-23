@@ -1,4 +1,4 @@
-<?php include_once("conexao.php") ?>
+<?php include_once("../conexao.php") ?>
 
 <?php 
 	
@@ -10,7 +10,7 @@
 
 		if(mysqli_fetch_array($res))
 		{
-			header("Location: loginUsuario.php?error=Usuario desativado!");
+			header("Location: Usuario/loginUsuario.php?error=Usuario desativado!");
 		}else{	
 			$result = mysqli_query($con, "SELECT cpf, login, tipo FROM usuario WHERE login = '$login' and senha = '$senha'") or die("Erro ao pesquisar login" . mysqli_error());
 
@@ -29,7 +29,7 @@
 			}
 			else
 			{
-				header("Location: loginUsuario.php?error=Usuario e/ou senha inválidos!");
+				header("Location: Usuario/loginUsuario.php?error=Usuario e/ou senha inválidos!");
 			}
 		}
 ?>

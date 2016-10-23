@@ -1,5 +1,7 @@
-<?php include_once("header.php") ?>
+<?php include_once("../header_sub.php") ?>
 
+<link rel="stylesheet"  href="../css/bootstrap.css">
+<link rel="stylesheet"  href="../css/bootstrap-theme.css">
 		<?php 
 			if( isset($_GET["erro"]) ) {
 				$erro = $_GET["erro"];
@@ -33,7 +35,7 @@
 		        	<h3 class="panel-title"> Entrar no UNIFunda </h3>
 		        </div>	        
 		        <div class="panel-body">
-			        <form class="form-horizontal" method="POST" action="validaUsuario.php">
+			        <form class="form-horizontal" method="POST" action="Usuario/validaUsuario.php">
 					  <div class="form-group">
 					    <label for="inputEmail3" class="col-md-2 col-md-offset-1 control-label">Login</label>
 					    <div class="col-md-7">
@@ -51,11 +53,11 @@
 					      <button type="submit" class="btn btn-default">Entrar</button>
 					    </div>
 					    <div class="col-md-2">					    	
-					      <a class="btn btn-default" href="cadastroUsuario.php" role="button">Cadastrar</a>
+					      <a class="btn btn-default" href="Usuario/cadastroUsuario.php" role="button">Cadastrar</a>
 					    </div>
 					  </div>
 					</form>
 		        </div>
 	        </div>
     	</div>
-<?php include_once("footer.php") ?>
+<?php include_once("../footer_sub.php") ?>

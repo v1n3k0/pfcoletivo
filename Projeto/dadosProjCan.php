@@ -1,4 +1,4 @@
-<?php include_once("header.php") ?>
+<?php include_once("../header_sub.php") ?>
 
 <div class="mensagme text-center">
 	<?php 
@@ -189,4 +189,4 @@ $result = mysqli_query($con, "SELECT * FROM projeto WHERE codigo = '$cod'");
 	}
  ?>
 
-<?php include_once("footer.php") ?>
+<?php include_once("../footer_sub.php") ?>

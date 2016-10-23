@@ -1,4 +1,6 @@
-<?php include_once("header.php") ?>
+<?php include_once("../header_sub.php") ?>
+<link rel="stylesheet"  href="../css/bootstrap.css">
+<link rel="stylesheet"  href="../css/bootstrap-theme.css">
 <div class="mensagme text-center">
 	<?php 
 
@@ -24,7 +26,7 @@
 					<h3 class="panel-title">Cadastrar Usuario</h3>
 			</div>
 			<div class="panel-body">
-				<form class="form-horizontal" method="POST" action="storeUsuario.php" >
+				<form class="form-horizontal" method="POST" action="Usuario/storeUsuario.php" >
 					<div class="form-group">
 					    <label class="col-md-4 control-label">*Login</label>
 						<div class="col-md-8">
@@ -137,4 +139,4 @@
 		</div>
     </div>
 
-<?php include_once("footer.php") ?>
+<?php include_once("../footer_sub.php") ?>
