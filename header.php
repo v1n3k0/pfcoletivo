@@ -29,7 +29,7 @@
 				         	<ul class="dropdown-menu">
 				            <li><a href="buscaUsuario.php">Consultar</a></li>
 				            <li><a href="#">Alterar</a></li>
-				            <li><a href="#">Desativar</a></li>
+				            <li><a href="desativarUsuario.php">Desativar</a></li>
 				          </ul>
 				        </li>
 					</li>
