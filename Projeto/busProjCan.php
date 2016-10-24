@@ -50,7 +50,7 @@ if(isset($_GET['categoria']))
 					    <label class="row col-md-4 control-label">Busca por categoria</label>
 						<div class="col-md-8">
 							<select class="form-control" name="categoria">
-									<option value="Default">Selecionar Valor</option> 
+									<option value="Default">Selecionar Opção</option> 
 									<option value="Pesquisa">Pesquisa</option> 
 									<option value="Competição Tecnológica">Competição Tecnológica</option> 
 									<option value="Inovação no Ensino">Inovação no Ensino</option> 

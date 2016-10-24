@@ -72,9 +72,9 @@ $result = mysqli_query($con, "SELECT * FROM usuario WHERE cpf = '$cpf'");
 								</div>
 							</div>
 							<div class="form-group">
-								<label class="col-md-3 control-label">Pais</label>
+								<label class="col-md-3 control-label">Endereço</label>
 								<div class="col-md-8">
-									<input type="text" class="form-control" name="pais" placeholder=<?php echo $usuario->pais ?>>
+									<input type="text" class="form-control" name="endereco" placeholder=<?php echo $usuario->endereco ?>>
 								</div>
 							</div>
 							<div class="form-group">
@@ -117,6 +117,12 @@ $result = mysqli_query($con, "SELECT * FROM usuario WHERE cpf = '$cpf'");
 										<option value="sp">São Paulo</option> 
 										<option value="to">Tocantins</option> 
 									</select>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-md-3 control-label">País</label>
+								<div class="col-md-8">
+									<input type="text" class="form-control" name="pais" placeholder=<?php echo $usuario->pais ?>>
 								</div>
 							</div>
 							<div class="form-group">

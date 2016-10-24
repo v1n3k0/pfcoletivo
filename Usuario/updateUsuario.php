@@ -11,6 +11,7 @@
 	$pais     = $_POST['pais'];
 	$cidade = $_POST['cidade'];
 	$estado     = $_POST['estado'];
+	$endereco = $_POST['endereco'];
 	$email = $_POST['email'];
 	$sen = $_POST['senha_atual'];
 	
@@ -39,6 +40,9 @@
 		}	
 		if($estado != NULL){
 			$result = mysqli_query($con, "UPDATE usuario set estado='$estado' where cpf='$cpf'");
+		}
+		if($endereco != NULL){
+			$result = mysqli_query($con, "UPDATE usuario set endereco='$endereco' where cpf='$cpf'");
 		}	
 		if($email != NULL){
 			$result = mysqli_query($con, "UPDATE usuario set email='$email' where cpf='$cpf'");
