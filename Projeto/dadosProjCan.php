@@ -1,18 +1,19 @@
 <?php include_once("../header.php") ?>
+<?php include_once("../validar.php") ?>
 
-<div class="mensagme text-center">
+<div class="mensagme text-center col-md-12">
 	<?php 
 
 	if(isset($_GET['error']))
 	{
 		?> 
-			<span style="color:red"><?php echo $_GET['error'] ?></span>
+			<p class="bg-danger" style="color:red"><?php echo $_GET['error'] ?></p>
 		<?php
 	} 
 	else if(isset($_GET['success']))
 	{
 		?> 
-			<span style="color:green"><?php echo $_GET['success'] ?></span>
+			<p class="bg-success" style="color:green"><?php echo $_GET['success'] ?></p>
 		<?php
 	}
 
@@ -29,7 +30,7 @@ $result = mysqli_query($con, "SELECT * FROM projeto WHERE codigo = '$cod'");
 
 ?>
 <div class="row">
-	<div class="row col-md-12">
+	<div class="col-md-12">
 		<div class="panel panel-primary">
 			<div class="panel-heading">
 				<h3 class="panel-title">Dados do projeto candidato</h3>
@@ -66,7 +67,9 @@ $result = mysqli_query($con, "SELECT * FROM projeto WHERE codigo = '$cod'");
 					?></table> <?php	
 				}else
 				{		
-					echo "Nenhum projeto encontrado<b></b>";
+				?>		
+					<p class="bg-info"><b> Nenhum projeto encontrado</b></p>				
+				<?php
 				}
 			}
 			?>
@@ -82,7 +85,7 @@ $result = mysqli_query($con, "SELECT * FROM projeto WHERE codigo = '$cod'");
 
 <?php if( $_SESSION["tipo"] == "gestor" ){ ?>
 <div class="row">
-	<div class="row col-md-7">
+	<div class="col-md-7">
 		<div class="panel panel-primary">
 			<div class="panel-heading">
 				<h3 class="panel-title">Alterar dados do projeto</h3>
@@ -146,7 +149,9 @@ $result = mysqli_query($con, "SELECT * FROM projeto WHERE codigo = '$cod'");
 				<?php	
 					}else
 					{		
-						echo "Nenhum projeto encontrado<b></b>";
+					?>		
+						<p class="bg-info"><b> Nenhum projeto encontrado</b></p>				
+					<?php
 					}
 				}
 				?>

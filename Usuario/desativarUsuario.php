@@ -7,13 +7,13 @@
 		if(isset($_GET['success']))
 		{
 			?> 
-				<span style="color:green"><?php echo $_GET['success'] ?></span>
+				<p class="bg-success" style="color:green"><?php echo $_GET['success'] ?></p>
 			<?php
 		}
 	?>
 </div>
 
-<div class="col-md-8 col-md-offset-2">    	
+<div class="col-md-12 col-md-offset-0">    	
 	   	<div class="panel panel-primary">
 			<div class="panel-heading">
 					<h3 class="panel-title">Desativar Usuario</h3>
@@ -26,10 +26,10 @@
 						</div>
 					</div>
 					<div class="form-group">
-						<div class="col-md-1 col-md-offset-2">
+						<div class="col-md-1 col-md-offset-6">
 							<button type="submit" class="btn btn-default">Sim</button>
 						</div>
-						<div class="col-md-2">					    	
+						<div class="col-md-1">					    	
 					      <a class="btn btn-default" href="../index.php" role="button">Não</a>
 					    </div>
 					</div>

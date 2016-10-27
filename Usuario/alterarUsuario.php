@@ -1,31 +1,24 @@
 <?php include_once("../header.php") ?>
 <?php include_once("../validar.php") ?>
 
-		<?php 
-			if( isset($_GET["erro"]) ) {
-				$erro = $_GET["erro"];
-				echo "<CENTER> <FONT color='red'>$erro</FONT></CENTER>";
-			}
-		 ?>
 
-		<div class="mensagme text-center">
-			<?php 
-					
-			if(isset($_GET['error']))
-			{
-				?> 
-					<span style="color:red"><?php echo $_GET['error'] ?></span>
-				<?php
-			} 
-			else if(isset($_GET['success']))
-			{
-				?> 
-					<span style="color:green"><?php echo $_GET['success'] ?></span>
-				<?php
-			}
+<div class="mensagme text-center col-md-12">
+	<?php 
+	if(isset($_GET['error']))
+	{
+		?> 
+		<p class="bg-danger" style="color:red"><?php echo $_GET['error'] ?></p>
+		<?php
+		} 
+		else if(isset($_GET['success']))
+		{
+		?> 
+			<p class="bg-success" style="color:green"><?php echo $_GET['success'] ?></p>
+		<?php
+		}
+		?>
+</div>
 
-
-				?>
 <?php 
 $cpf = $_SESSION["cpf"];
 
@@ -41,7 +34,7 @@ $result = mysqli_query($con, "SELECT * FROM usuario WHERE cpf = '$cpf'");
 		if(mysqli_num_rows($result) > 0)
 		{
 			?>
-			<div class="col-md-10 col-md-offset-1">
+			<div class="col-md-12 col-md-offset-0">
 				<?php
 				if($usuario = mysqli_fetch_object($result))
 				{

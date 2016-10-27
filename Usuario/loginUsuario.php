@@ -1,32 +1,24 @@
 <?php include_once("../header.php") ?>
 
-
-		<?php 
-			if( isset($_GET["erro"]) ) {
-				$erro = $_GET["erro"];
-				echo "<CENTER> <FONT color='red'>$erro</FONT></CENTER>";
-			}
-		 ?>
-
-		<div class="mensagme text-center">
+		<div class="mensagme text-center col-md-12">
 			<?php 
-					
+
 			if(isset($_GET['error']))
 			{
 				?> 
-					<span style="color:red"><?php echo $_GET['error'] ?></span>
+					<p class="bg-danger" style="color:red"><?php echo $_GET['error'] ?></p>
 				<?php
 			} 
 			else if(isset($_GET['success']))
 			{
 				?> 
-					<span style="color:green"><?php echo $_GET['success'] ?></span>
+					<p class="bg-success" style="color:green"><?php echo $_GET['success'] ?></p>
 				<?php
 			}
 
 
-				?>
-			</div>
+			?>
+		</div>
 
     	<div class="row col-md-6 col-md-offset-3">
 	        <div align="center" class="panel panel-primary">

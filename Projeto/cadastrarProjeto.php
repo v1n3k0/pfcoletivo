@@ -24,6 +24,6 @@
 	}
 	else
 	{
-		header("Location: cadastroProjeto.php?erro=CPF inválido!");			
+		header("Location: cadastroProjeto.php?error=CPF inválido!");			
 	}
 ?>

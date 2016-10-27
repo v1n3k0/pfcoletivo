@@ -16,7 +16,7 @@ if(isset($_GET['busca']))
 
 ?>
 <div class="row">
-	 <div class="row col-md-8 col-md-offset-2">    	
+	 <div class="row col-md-12 col-md-offset-0">    	
 	   	<div class="panel panel-primary">
 			<div class="panel-heading">
 					<h3 class="panel-title">Consultar Usuário</h3>
@@ -24,11 +24,13 @@ if(isset($_GET['busca']))
 			<div class="panel-body">
 			<form class="form-horizontal" method="GET" action="buscaUsuario.php" >
 					<div class="form-group">
-					    <label class="col-md-1 control-label">Busca</label>
-						<div class="col-md-8">
+						<div class="col-md-1 col-md-offset-0">
+					    	<label class="control-label">Busca</label>
+						</div>
+						<div class="col-md-9">
 						   	<input type="text" class="form-control" name="busca" placeholder="Palavra-chave">
 						</div>
-						<div class="col-md-3">
+						<div class="col-md-1">
 							<button type="submit" class="btn btn-default">Consultar</button>
 						</div>
 					</div>
@@ -38,7 +40,7 @@ if(isset($_GET['busca']))
 	</div>
 </div>
 <div class="row ">
-	<div class="col-md-10 col-md-offset-1">
+	<div class="col-md-12 col-md-offset-0">
 			<?php 
 			
 			if(isset($result))
@@ -70,7 +72,9 @@ if(isset($_GET['busca']))
 					?></table> <?php	
 				}else
 				{		
-					echo "Nenhum usuario encontrado<b></b>";
+				?>		
+					<p class="bg-info"><b> Nenhum usuario encontrado</b></p>				
+				<?php
 				}
 			}
 			?>

@@ -1,4 +1,5 @@
 <?php include_once("../header.php") ?>
+<?php include_once("../validar.php") ?>
 
 <?php 
 
@@ -39,21 +40,23 @@ $result = mysqli_query($con, "SELECT * FROM usuario WHERE cpf = '$cpf'");
 				while($usuario = mysqli_fetch_object($result))
 				{
 				?>					
-					<td><span class="detalhes"><?php echo $usuario->login ?></a></span><br></td>
-					<td><span class="detalhes"><?php echo $usuario->nome ?></a></span><br></td>
-					<td><span class="detalhes"><?php echo $usuario->pais ?></a></span><br></td>
-					<td><span class="detalhes"><?php echo $usuario->cidade ?></a></span><br></td>
-					<td><span class="detalhes"><?php echo $usuario->estado ?></a></span><br></td>
-					<td><span class="detalhes"><?php echo $usuario->data_n ?></a></span><br></td>
-					<td><span class="detalhes"><?php echo $usuario->email ?></a></span><br></td>
-					<td><span class="detalhes"><?php echo $usuario->tipo ?></a></span><br></td>
-					<td><span class="detalhes"><?php echo $usuario->categoria ?></a></span><br></td>
+					<td><span class="detalhes"><?php echo $usuario->login ?></span></td>
+					<td><span class="detalhes"><?php echo $usuario->nome ?></span></td>
+					<td><span class="detalhes"><?php echo $usuario->pais ?></span></td>
+					<td><span class="detalhes"><?php echo $usuario->cidade ?></span></td>
+					<td><span class="detalhes"><?php echo $usuario->estado ?></span></td>
+					<td><span class="detalhes"><?php echo $usuario->data_n ?></span></td>
+					<td><span class="detalhes"><?php echo $usuario->email ?></span></td>
+					<td><span class="detalhes"><?php echo $usuario->tipo ?></span></td>
+					<td><span class="detalhes"><?php echo $usuario->categoria ?></span></td>
 				<?php
 				}
 				?></table> <?php	
 			}elseif($aux = 0)
-			{		
-				echo "Nenhum usuario encontrado<b></b>";
+			{
+			?>		
+				<p class="bg-info"><b> Nenhum usuario encontrado</b></p>				
+			<?php
 			}
 		}
 		?>

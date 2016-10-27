@@ -1,19 +1,19 @@
 <?php include_once("../header.php") ?>
 <?php include_once("../validar.php") ?>
 
-<div class="mensagme text-center">
+<div class="mensagme text-center col-md-12">
 	<?php 
 
 	if(isset($_GET['error']))
 	{
 		?> 
-			<span style="color:red"><?php echo $_GET['error'] ?></span>
+			<p class="bg-danger" style="color:red"><?php echo $_GET['error'] ?></p>
 		<?php
 	} 
 	else if(isset($_GET['success']))
 	{
 		?> 
-			<span style="color:green"><?php echo $_GET['success'] ?></span>
+			<p class="bg-success" style="color:green"><?php echo $_GET['success'] ?></p>
 		<?php
 	}
 
@@ -39,7 +39,7 @@ if(isset($_GET['categoria']))
 
 ?>
 <div class="row">
-	 <div class="row col-md-8 col-md-offset-2">    	
+	 <div class="row col-md-12 col-md-offset-0">    	
 	   	<div class="panel panel-primary">
 			<div class="panel-heading">
 					<h3 class="panel-title">Consulta Projeto Candidato</h3>
@@ -47,8 +47,8 @@ if(isset($_GET['categoria']))
 			<div class="panel-body">
 			<form class="form-horizontal" method="GET" action="busProjCan.php" >
 					<div class="form-group">
-					    <label class="row col-md-4 control-label">Busca por categoria</label>
-						<div class="col-md-8">
+					    <label class="row col-md-3 control-label">Busca por categoria</label>
+						<div class="col-md-9">
 							<select class="form-control" name="categoria">
 									<option value="Default">Selecionar Opção</option> 
 									<option value="Pesquisa">Pesquisa</option> 
@@ -60,12 +60,12 @@ if(isset($_GET['categoria']))
 						</div>
 					</div>
 					<div class="form-group">
-						<label class="row col-md-4 control-label">Busca por codigo / nome</label>
-						<div class="col-md-8">
+						<label class="row col-md-3 control-label">Busca por codigo / nome</label>
+						<div class="col-md-9">
 						   	<input type="text" class="form-control" name="codigo" placeholder="Codigo ou nome">
 						</div>
 					</div>
-					<div class="col-md-8 col-md-offset-9">
+					<div class="col-md-2 col-md-offset-10">
 						<button type="submit" class="btn btn-default">Consultar</button>
 					</div>
 			</form>
@@ -74,7 +74,7 @@ if(isset($_GET['categoria']))
 	</div>
 </div>
 <div class="row ">
-	<div class="col-md-10 col-md-offset-1">
+	<div class="col-md-12 col-md-offset-0">
 			<?php 
 			$aux =0;
 			if(isset($result))
@@ -99,10 +99,11 @@ if(isset($_GET['categoria']))
 					{
 						?>
 						<tr>
-							<td><span class="detalhes"><a href="dadosProjCan.php?cod=<?php echo $projeto->codigo; ?>"><?php echo $projeto->nome_p ?></a></span><br></td>
-							<td><span class="detalhes"><a href="dadosProjCan.php?cod=<?php echo $projeto->codigo; ?>"><?php echo $projeto->categoria ?></a></span><br></td>
-							<td><span class="detalhes"><a href="dadosProjCan.php?cod=<?php echo $projeto->codigo; ?>"><?php echo $projeto->valor ?></a></span><br></td>
-							<td><span class="detalhes"><a href="dadosProjCan.php?cod=<?php echo $projeto->codigo; ?>"><?php echo $projeto->duracao ?></a></span><br></td>
+							<td><span class="detalhes"><a href="dadosProjCan.php?cod=<?php echo $projeto->codigo; ?>"><?php echo $projeto->nome_p ?></a></span></td>
+							<td><span class="detalhes"><a href="dadosProjCan.php?cod=<?php echo $projeto->codigo; ?>"><?php echo $projeto->categoria ?></a></span></td>
+							<td><span class="detalhes"><a href="dadosProjCan.php?cod=<?php echo $projeto->codigo; ?>"><?php echo $projeto->valor ?></a></span></td>
+							<td><span class="detalhes"><a href="dadosProjCan.php?cod=<?php echo $projeto->codigo; ?>"><?php echo $projeto->duracao ?></a></span></td>
+							<td><a class="btn btn-default" href="dadosProjCan.php?cod=<?php echo $projeto->codigo; ?>" role="button">Alterar</a></td>
 						
 						</tr>
 						
@@ -110,8 +111,10 @@ if(isset($_GET['categoria']))
 					}
 					?></table> <?php	
 				}else
-				{		
-					echo "Nenhum projeto encontrado<b></b>";
+				{
+				?>		
+					<p class="bg-info"><b> Nenhum projeto encontrado</b></p>				
+				<?php
 				}
 			}
 			?>
