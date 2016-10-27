@@ -67,7 +67,7 @@
 					</li>
 					<?php }else{ ?>
 					<li>
-						<a href="../Usuario/dadosUsuario.php?cpf=<?php echo $cpf ?>"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> <?php echo $login ?></a> 
+						<a href="../Usuario/dadosUsuario.php?cpf=<?php echo $cpf ?>" class="text-capitalize"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> <?php echo $login ?></a> 
 					</li>
 					<li>
 						<a href="../sair.php">Sair</a>

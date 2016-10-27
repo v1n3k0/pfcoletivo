@@ -59,6 +59,7 @@ if(isset($_GET['busca']))
 							<tr>
 								<td><b>Login</b></td>
 								<td><b>Nome</b></td>
+								<td></td>
 							</tr>
 					<?php
 					while($usuario = mysqli_fetch_object($result))
@@ -69,7 +70,7 @@ if(isset($_GET['busca']))
 							<td><span class="detalhes"><a href="dadosUsuario.php?cpf=<?php echo $usuario->cpf; ?>"><?php echo $usuario->nome ?></a></span><br>
 							</td>
 							<td>
-								<p><a href="dadosUsuario.php?cpf=<?php echo $usuario->cpf; ?>" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Mais</a></p>
+								<p><a href="dadosUsuario.php?cpf=<?php echo $usuario->cpf; ?>" class="btn btn-primary btn-xs" role="button"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Mais</a></p>
 							</td>
 						</tr>
 						

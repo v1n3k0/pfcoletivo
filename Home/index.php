@@ -1,6 +1,6 @@
 <?php include_once("../header.php") ?>
     <div class="row">
-        <div class="jumbotron col-md-10 col-md-offset-1">
+        <div class="jumbotron col-md-10 col-md-offset-1 ">
             <div align="center" class="row">
                 <div class="col-md-3 col-md-offset-2">
                     <img src="../image/LogoEFEI.png" alt="Logo Unifei" class="img-responsive">
