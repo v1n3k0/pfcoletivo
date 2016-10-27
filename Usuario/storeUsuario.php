@@ -19,16 +19,11 @@
 
 	if( $senha == $r_senha){
 	
-		$verificaCpf = mysqli_query($con, "SELECT * FROM usuario WHERE cpf = '$cpf'");
-		$verificaLogin = mysqli_query($con, "SELECT * FROM usuario WHERE login = '$login'");
+		$result = mysqli_query($con, "SELECT * FROM usuario WHERE cpf = '$cpf'");
 
-		if(mysqli_fetch_array($verificaLogin))
+		if(mysqli_fetch_array($result))
 		{
-			header("Location: cadastroUsuario.php?error=Este login já existe");
-		}		
-		else if(mysqli_fetch_array($verificaCpf))
-		{
-			header("Location: cadastroUsuario.php?error=Este cpf já foi cadastrado");
+			header("Location: cadastroUsuario.php?error=Este código já existe");
 		}
 		else
 		{
