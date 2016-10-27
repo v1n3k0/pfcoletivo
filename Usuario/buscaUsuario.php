@@ -28,10 +28,13 @@ if(isset($_GET['busca']))
 					    	<label class="control-label">Busca</label>
 						</div>
 						<div class="col-md-9">
-						   	<input type="text" class="form-control" name="busca" placeholder="Nome ou login">
+							<div class="input-group">
+								<span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span>
+							   	<input type="text" class="form-control" name="busca" placeholder="Nome ou login" aria-describedby="basic-addon1">
+						   	</div>
 						</div>
 						<div class="col-md-1">
-							<button type="submit" class="btn btn-default">Consultar</button>
+							<button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> Consultar</button>
 						</div>
 					</div>
 			</form>
@@ -64,6 +67,9 @@ if(isset($_GET['busca']))
 						<tr>
 							<td><span class="detalhes"><a href="dadosUsuario.php?cpf=<?php echo $usuario->cpf; ?>"><?php echo $usuario->login ?></a></span><br></td>
 							<td><span class="detalhes"><a href="dadosUsuario.php?cpf=<?php echo $usuario->cpf; ?>"><?php echo $usuario->nome ?></a></span><br>
+							</td>
+							<td>
+								<p><a href="dadosUsuario.php?cpf=<?php echo $usuario->cpf; ?>" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Mais</a></p>
 							</td>
 						</tr>
 						

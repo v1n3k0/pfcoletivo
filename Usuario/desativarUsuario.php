@@ -27,10 +27,10 @@
 					</div>
 					<div class="form-group">
 						<div class="col-md-1 col-md-offset-6">
-							<button type="submit" class="btn btn-default">Sim</button>
+							<button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Sim</button>
 						</div>
 						<div class="col-md-1">					    	
-					      <a class="btn btn-default" href="../index.php" role="button">Não</a>
+					      <a class="btn btn-default" href="../index.php" role="button"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Não</a>
 					    </div>
 					</div>
 				</form>

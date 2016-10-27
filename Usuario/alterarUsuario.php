@@ -139,7 +139,7 @@ $result = mysqli_query($con, "SELECT * FROM usuario WHERE cpf = '$cpf'");
 							</div>
 							<div class="form-group">
 					    		<div class="col-md-1 col-md-offset-9">
-									<button type="submit" class="btn btn-default">Atualizar</button>
+									<button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span> Atualizar</button>
 								</div>
 							</div>
 					</div>

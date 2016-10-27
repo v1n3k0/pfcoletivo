@@ -25,7 +25,7 @@
             <p>
                 texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto 
             </p>
-            <p><a href="#" class="btn btn-primary" role="button">Mais</a></p>
+            <p><a href="#" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Mais</a></p>
           </div>
         </div>
       </div>
@@ -34,11 +34,11 @@
         <div class="thumbnail">
           <img src="../image/242x200.svg" alt="imagem">
           <div class="caption">
-            <h3>Projeto 1</h3>
+            <h3>Projeto 2</h3>
             <p>
                 texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto 
             </p>
-            <p><a href="#" class="btn btn-primary" role="button">Mais</a></p>
+            <p><a href="#" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Mais</a></p>
           </div>
         </div>
       </div>
@@ -47,47 +47,15 @@
         <div class="thumbnail">
           <img src="../image/242x200.svg" alt="imagem">
           <div class="caption">
-            <h3>Projeto 1</h3>
+            <h3>Projeto 3</h3>
             <p>
                 texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto 
             </p>
-            <p><a href="#" class="btn btn-primary" role="button">Mais</a></p>
+            <p><a href="#" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Mais</a></p>
           </div>
         </div>
       </div>
 
     </div>
-
-    <div class="row">
-        <div class="col-md-11 col-md-offset-0">
-            <dl class="dl-horizontal">
-              <dt>Projeto 1</dt>
-              <dd>
-               texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto
-              </dd>
-            </dl>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-11 col-md-offset-0">
-            <dl class="dl-horizontal">
-              <dt>Projeto 2</dt>
-              <dd>
-               texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto
-              </dd>
-            </dl>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-11 col-md-offset-0">
-            <dl class="dl-horizontal">
-              <dt>Projeto 3</dt>
-              <dd>
-               texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto
-              </dd>
-            </dl>
-        </div>
-    </div>
-
     
 <?php include_once("../footer.php") ?>

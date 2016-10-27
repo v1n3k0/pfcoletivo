@@ -39,7 +39,7 @@
 						<div class="col-md-9">
 							<select class="form-control" name="categoria">
 									<option value="1">Pesquisa</option> 
-									<option value="2 Tecnológica">Competição Tecnológica</option> 
+									<option value="2">Competição Tecnológica</option> 
 									<option value="3">Inovação no Ensino</option> 
 									<option value="4">Manutenção e Reforma</option> 
 									<option value="5">Pequenas Obras</option>
