@@ -26,7 +26,7 @@
 if(isset($_GET['categoria']))
 {	
 	$cat = $_GET['categoria'];
-	$result = mysqli_query($con, "SELECT * FROM projeto where categoria = '$cat'");				
+	$result = mysqli_query($con, "SELECT * FROM projeto where cod_cat_fk= '$cat'");				
 	if ($cat == "Default"){
 		if(isset($_GET['codigo'])){
 				$cod = $_GET['codigo'];
@@ -51,11 +51,11 @@ if(isset($_GET['categoria']))
 						<div class="col-md-9">
 							<select class="form-control" name="categoria">
 									<option value="Default">Selecionar Opção</option> 
-									<option value="Pesquisa">Pesquisa</option> 
-									<option value="Competição Tecnológica">Competição Tecnológica</option> 
-									<option value="Inovação no Ensino">Inovação no Ensino</option> 
-									<option value="Manutenção e Reforma">Manutenção e Reforma</option> 
-									<option value="Pequenas Obras">Pequenas Obras</option>
+									<option value="1">Pesquisa</option> 
+									<option value="2">Competição Tecnológica</option> 
+									<option value="3">Inovação no Ensino</option> 
+									<option value="4">Manutenção e Reforma</option> 
+									<option value="5">Pequenas Obras</option>
 							</select>
 						</div>
 					</div>
@@ -97,10 +97,21 @@ if(isset($_GET['categoria']))
 					<?php
 					while($projeto = mysqli_fetch_object($result))
 					{
+						if($projeto->cod_cat_fk == 1){
+							$categoria_p ="Pesquisa";
+						}elseif($projeto->cod_cat_fk == 2){
+							$categoria_p ="Competição Tecnológic";
+						}elseif($projeto->cod_cat_fk == 3){
+							$categoria_p ="Inovação no Ensino";
+						}elseif($projeto->cod_cat_fk == 4){
+							$categoria_p ="Manutenção e Reforma";
+						}elseif($projeto->cod_cat_fk == 5){
+							$categoria_p ="Pequenas Obras";
+						}
 						?>
 						<tr>
 							<td><span class="detalhes"><a href="dadosProjCan.php?cod=<?php echo $projeto->codigo; ?>"><?php echo $projeto->nome_p ?></a></span></td>
-							<td><span class="detalhes"><a href="dadosProjCan.php?cod=<?php echo $projeto->codigo; ?>"><?php echo $projeto->categoria ?></a></span></td>
+							<td><span class="detalhes"><a href="dadosProjCan.php?cod=<?php echo $projeto->codigo; ?>"><?php echo $categoria_p ?></a></span></td>
 							<td><span class="detalhes"><a href="dadosProjCan.php?cod=<?php echo $projeto->codigo; ?>"><?php echo $projeto->valor ?></a></span></td>
 							<td><span class="detalhes"><a href="dadosProjCan.php?cod=<?php echo $projeto->codigo; ?>"><?php echo $projeto->duracao ?></a></span></td>
 							<td><a class="btn btn-default" href="dadosProjCan.php?cod=<?php echo $projeto->codigo; ?>" role="button">Alterar</a></td>

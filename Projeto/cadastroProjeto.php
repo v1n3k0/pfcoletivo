@@ -38,11 +38,11 @@
 					    <label class="col-md-3 control-label">*Categoria</label>
 						<div class="col-md-9">
 							<select class="form-control" name="categoria">
-									<option value="Pesquisa">Pesquisa</option> 
-									<option value="Competição Tecnológica">Competição Tecnológica</option> 
-									<option value="Inovação no Ensino">Inovação no Ensino</option> 
-									<option value="Manutenção e Reforma">Manutenção e Reforma</option> 
-									<option value="Pequenas Obras">Pequenas Obras</option>
+									<option value="1">Pesquisa</option> 
+									<option value="2 Tecnológica">Competição Tecnológica</option> 
+									<option value="3">Inovação no Ensino</option> 
+									<option value="4">Manutenção e Reforma</option> 
+									<option value="5">Pequenas Obras</option>
 							</select>
 						</div>
 					</div>
@@ -61,6 +61,19 @@
 						      	<div class="input-group-addon">.00</div>
 						    </div>					    	
 					    </div>
+					</div>
+					<div class="form-group">
+						<label class="col-md-3	 control-label">*Descrição do projeto</label>
+						<div class="col-md-9">
+							<textarea class="form-control" rows="3" name="descricao" size=255 placeholder="Descrição do projeto">
+							</textarea>
+						</div>
+					</div>
+					<div class="form-group">
+					<label class="col-md-3	 control-label">Video</label>
+						<div class="col-md-9">
+							<input type="text" class="form-control" name="video" placeholder="URL Youtube">
+						</div>
 					</div>
 					<div class="form-group">
 					    <div class="col-md-8 col-md-offset-3">
