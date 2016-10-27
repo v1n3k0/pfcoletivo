@@ -28,7 +28,7 @@ if(isset($_GET['busca']))
 					    	<label class="control-label">Busca</label>
 						</div>
 						<div class="col-md-9">
-						   	<input type="text" class="form-control" name="busca" placeholder="Palavra-chave">
+						   	<input type="text" class="form-control" name="busca" placeholder="Nome ou login">
 						</div>
 						<div class="col-md-1">
 							<button type="submit" class="btn btn-default">Consultar</button>
