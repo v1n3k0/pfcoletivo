@@ -62,11 +62,14 @@ if(isset($_GET['categoria']))
 					<div class="form-group">
 						<label class="row col-md-3 control-label">Busca por codigo / nome</label>
 						<div class="col-md-9">
-						   	<input type="text" class="form-control" name="codigo" placeholder="Codigo ou nome">
+						   	<div class="input-group">
+								<span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span>
+							   	<input type="text" class="form-control" name="codigo" placeholder="Codigo ou nome" aria-describedby="basic-addon1">
+						   	</div>
 						</div>
 					</div>
 					<div class="col-md-2 col-md-offset-10">
-						<button type="submit" class="btn btn-default">Consultar</button>
+						<button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> Consultar</button>
 					</div>
 			</form>
 			</div>
@@ -108,13 +111,13 @@ if(isset($_GET['categoria']))
 						}elseif($projeto->cod_cat_fk == 5){
 							$categoria_p ="Pequenas Obras";
 						}
-						?>
+					?>
 						<tr>
 							<td><span class="detalhes"><a href="dadosProjCan.php?cod=<?php echo $projeto->codigo; ?>"><?php echo $projeto->nome_p ?></a></span></td>
 							<td><span class="detalhes"><a href="dadosProjCan.php?cod=<?php echo $projeto->codigo; ?>"><?php echo $categoria_p ?></a></span></td>
 							<td><span class="detalhes"><a href="dadosProjCan.php?cod=<?php echo $projeto->codigo; ?>"><?php echo $projeto->valor ?></a></span></td>
 							<td><span class="detalhes"><a href="dadosProjCan.php?cod=<?php echo $projeto->codigo; ?>"><?php echo $projeto->duracao ?></a></span></td>
-							<td><a class="btn btn-default" href="dadosProjCan.php?cod=<?php echo $projeto->codigo; ?>" role="button">Alterar</a></td>
+							<td><a class="btn btn-default btn-xs" href="dadosProjCan.php?cod=<?php echo $projeto->codigo; ?>" role="button"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Alterar</a></td>
 						
 						</tr>
 						

@@ -15,7 +15,7 @@
 		header("Location: dadosProjCan.php?cod=$cod&success=Dados alterados com sucesso!");
 	}	
 	if($categoria != NULL){
-		mysqli_query($con, "UPDATE projeto set categoria='$categoria' where codigo='$cod'");
+		mysqli_query($con, "UPDATE projeto set cod_cat_fk='$categoria' where codigo='$cod'");
 		header("Location: dadosProjCan.php?cod=$cod&success=Dados alterados com sucesso!");
 	}	
 	if($duracao != NULL){

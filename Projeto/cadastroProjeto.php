@@ -49,7 +49,7 @@
 					<div class="form-group">
 					    <label class="col-md-3 control-label">*Duração prevista</label>
 						<div class="col-md-9">
-						   	<input type="number" class="form-control" name="duracao" placeholder="dias de trabalho">
+						   	<input type="number" class="form-control" name="duracao" placeholder="Dias de trabalho">
 						</div>
 					</div>
 					<div class="form-group">
@@ -82,7 +82,7 @@
 					</div>
 					<div class="form-group">
 					    <div class="col-md-2 col-md-offset-10">
-					      <button type="submit" class="btn btn-default">Cadastrar</button>
+					      <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-save" aria-hidden="true"></span> Cadastrar</button>
 					    </div>
 					</div>
 				</form>				

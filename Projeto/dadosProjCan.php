@@ -54,10 +54,21 @@ $result = mysqli_query($con, "SELECT * FROM projeto WHERE codigo = '$cod'");
 					<?php
 					if($projeto = mysqli_fetch_object($result))
 					{
+						if($projeto->cod_cat_fk == 1){
+							$categoria_p ="Pesquisa";
+						}elseif($projeto->cod_cat_fk == 2){
+							$categoria_p ="Competição Tecnológic";
+						}elseif($projeto->cod_cat_fk == 3){
+							$categoria_p ="Inovação no Ensino";
+						}elseif($projeto->cod_cat_fk == 4){
+							$categoria_p ="Manutenção e Reforma";
+						}elseif($projeto->cod_cat_fk == 5){
+							$categoria_p ="Pequenas Obras";
+						}
 					?>					
 						<td><span class="detalhes"><?php echo $projeto->codigo ?></span></td>
 						<td><span class="detalhes"><?php echo $projeto->nome_p ?></span></td>
-						<td><span class="detalhes"><?php echo $projeto->categoria ?></span></td>
+						<td><span class="detalhes"><?php echo $categoria_p ?></span></td>
 						<td><span class="detalhes"><?php echo $projeto->duracao ?></span></td>
 						<td><span class="detalhes"><?php echo $projeto->valor ?></span></td>
 						<td><span class="detalhes"><?php echo $projeto->status ?></span></td>
@@ -101,6 +112,17 @@ $result = mysqli_query($con, "SELECT * FROM projeto WHERE codigo = '$cod'");
 					<?php
 					if($projeto = mysqli_fetch_object($result))
 					{
+						if($projeto->cod_cat_fk == 1){
+							$categoria_p ="Pesquisa";
+						}elseif($projeto->cod_cat_fk == 2){
+							$categoria_p ="Competição Tecnológic";
+						}elseif($projeto->cod_cat_fk == 3){
+							$categoria_p ="Inovação no Ensino";
+						}elseif($projeto->cod_cat_fk == 4){
+							$categoria_p ="Manutenção e Reforma";
+						}elseif($projeto->cod_cat_fk == 5){
+							$categoria_p ="Pequenas Obras";
+						}
 					?>
 						<div class="form-group">
 							<label class="col-md-3 control-label">Nome</label>
@@ -112,12 +134,12 @@ $result = mysqli_query($con, "SELECT * FROM projeto WHERE codigo = '$cod'");
 						    <label class="col-md-3 control-label">Categoria</label>
 							<div class="col-md-8">
 								<select class="form-control" name="categoria">
-										<option value=<?php echo $projeto->categoria ?>><?php echo $projeto->categoria ?></option>
-										<option value="Pesquisa">Pesquisa</option> 
-										<option value="Competição Tecnológica">Competição Tecnológica</option> 
-										<option value="Inovação no Ensino">Inovação no Ensino</option> 
-										<option value="Manutenção e Reforma">Manutenção e Reforma</option> 
-										<option value="Pequenas Obras">Pequenas Obras</option>
+										<option value=<?php echo $projeto->cod_cat_fk ?>><?php echo $categoria_p ?></option>
+										<option value="1">Pesquisa</option> 
+										<option value="2">Competição Tecnológica</option> 
+										<option value="3">Inovação no Ensino</option> 
+										<option value="4">Manutenção e Reforma</option> 
+										<option value="5">Pequenas Obras</option>
 								</select>
 							</div>
 						</div>
@@ -139,7 +161,7 @@ $result = mysqli_query($con, "SELECT * FROM projeto WHERE codigo = '$cod'");
 						</div>
 						<div class="form-group">
 					    <div class="col-md-2 col-md-offset-7">
-					      <button type="submit" class="btn btn-default">Alterar</button>
+					      <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span> Atualizar</button>
 					    </div>
 					</div>
 					<?php
@@ -159,7 +181,7 @@ $result = mysqli_query($con, "SELECT * FROM projeto WHERE codigo = '$cod'");
 		</div>
 	</div>
 
-	<div class="row col-md-4 col-md-offset-1">
+	<div class="row col-md-5 col-md-offset-0">
 		<div class="panel panel-primary">
 			<div class="panel-heading">
 				<h3 class="panel-title">Remover dados do projeto</h3>
@@ -173,7 +195,7 @@ $result = mysqli_query($con, "SELECT * FROM projeto WHERE codigo = '$cod'");
 				</div>
 				<div class="form-group">
 					<div class="col-md-1 col-md-offset-4">
-						<button type="submit" class="btn btn-default">Sim</button>
+						<button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Excluir</button>
 					</div>
 				</div>
 			</form>
