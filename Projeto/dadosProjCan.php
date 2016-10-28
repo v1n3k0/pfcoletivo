@@ -49,7 +49,7 @@ $result = mysqli_query($con, "SELECT * FROM projeto WHERE codigo = '$cod'");
 								<td><b>Duração prevista</b></td>
 								<td><b>Valor previsto</b></td>
 								<td><b>Status</b></td>
-								<td><b>Descrição</b></td>								
+								
 							</tr>
 					<?php
 					if($projeto = mysqli_fetch_object($result))
@@ -72,7 +72,6 @@ $result = mysqli_query($con, "SELECT * FROM projeto WHERE codigo = '$cod'");
 						<td><span class="detalhes"><?php echo $projeto->duracao ?></span></td>
 						<td><span class="detalhes"><?php echo $projeto->valor ?></span></td>
 						<td><span class="detalhes"><?php echo $projeto->status ?></span></td>
-						<td><span class="detalhes"><?php echo $projeto->descricao ?></span></td>
 						
 					<?php
 					}
@@ -159,13 +158,6 @@ $result = mysqli_query($con, "SELECT * FROM projeto WHERE codigo = '$cod'");
 							      	<div class="input-group-addon">.00</div>
 							    </div>					    	
 						    </div>
-						</div>
-						<div class="form-group">
-							<label class="col-md-3	 control-label">*Descrição do projeto</label>
-							<div class="col-md-8">
-								<textarea class="form-control" rows="3" name="descricao" size=255 placeholder="Descrição do projeto">
-								</textarea>
-							</div>
 						</div>
 						<div class="form-group">
 					    <div class="col-md-2 col-md-offset-7">

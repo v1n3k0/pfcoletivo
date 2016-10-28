@@ -7,7 +7,7 @@
 	$categoria  = $_POST['categoria'];
 	$duracao     = $_POST['duracao'];
 	$valor  = $_POST['valor'];
-	$desc = $_POST['descricao'];	
+	
 
 	
 	if($nome != NULL){
@@ -24,10 +24,6 @@
 	}	
 	if($valor != NULL){
 		mysqli_query($con, "UPDATE projeto set valor='$valor' where codigo='$cod'");
-		header("Location: dadosProjCan.php?cod=$cod&success=Dados alterados com sucesso!");
-	}
-	if($desc != NULL){
-		mysqli_query($con, "UPDATE projeto set descricao='$desc' where codigo='$cod'");
 		header("Location: dadosProjCan.php?cod=$cod&success=Dados alterados com sucesso!");
 	}	
 

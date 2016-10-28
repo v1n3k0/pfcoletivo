@@ -27,7 +27,6 @@ Create Table criterio (
     cod_cri int NOT NULL AUTO_INCREMENT PRIMARY KEY,
     cod_cat_fk int NOT NULL,
     nome_cri varchar(30),
-    peso float NOT NULL,
     CONSTRAINT cod_cat_fk FOREIGN KEY (cod_cat_fk)REFERENCES categoria(cod_cat)
 );
 

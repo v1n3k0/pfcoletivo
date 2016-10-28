@@ -98,8 +98,7 @@ if(isset($_GET['categoria']))
 								<td><b>Categoria</b></td>
 								<td><b>Custo Estimado </b></td>
 								<td><b>Duração Estimada</b></td>
-								<td><b>Descrição</b></td>
-								<td></td>
+							
 							</tr>
 					<?php
 					while($projeto = mysqli_fetch_object($result))
@@ -128,9 +127,6 @@ if(isset($_GET['categoria']))
 							</td>
 							<td>
 								<span class="detalhes"><a href="dadosProjCan.php?cod=<?php echo $projeto->codigo; ?>"><?php echo $projeto->duracao ?></a></span>
-							</td>
-							<td>
-								<span class="detalhes"><?php echo $projeto->descricao ?></span>
 							</td>
 							<td>
 								<a class="btn btn-default btn-xs" href="dadosProjCan.php?cod=<?php echo $projeto->codigo; ?>" role="button"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Alterar</a>
