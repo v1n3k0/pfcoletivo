@@ -26,11 +26,11 @@
 if(isset($_GET['categoria']))
 {	
 	$cat = $_GET['categoria'];
-	$result = mysqli_query($con, "SELECT * FROM projeto where cod_cat_fk= '$cat'");				
+	$result = mysqli_query($con, "SELECT * FROM criterio where cod_cat_fk= '$cat'");				
 	if ($cat == "Default"){
-		if(isset($_GET['codigo'])){
-				$cod = $_GET['codigo'];
-				$result = mysqli_query($con, "SELECT * FROM projeto where codigo = '$cod' or nome_p like'%$cod%'");
+		if(isset($_GET['nome'])){
+				$cod = $_GET['nome'];
+				$result = mysqli_query($con, "SELECT * FROM criterio where nome_cri like'%$cod%'");
 		}
 	}
 
@@ -42,10 +42,10 @@ if(isset($_GET['categoria']))
 	 <div class="row col-md-12 col-md-offset-0">    	
 	   	<div class="panel panel-primary">
 			<div class="panel-heading">
-					<h3 class="panel-title">Consulta Projeto Candidato</h3>
+					<h3 class="panel-title">Consulta Criterio de Avaliação</h3>
 			</div>
 			<div class="panel-body">
-			<form class="form-horizontal" method="GET" action="busProjCan.php" >
+			<form class="form-horizontal" method="GET" action="buscarCriterio.php" >
 					<div class="form-group">
 					    <label class="row col-md-3 control-label">Busca por categoria</label>
 						<div class="col-md-9">
@@ -63,11 +63,11 @@ if(isset($_GET['categoria']))
 						</div>
 					</div>
 					<div class="form-group">
-						<label class="row col-md-3 control-label">Busca por codigo / nome</label>
+						<label class="row col-md-3 control-label">Busca por nome</label>
 						<div class="col-md-9">
 						   	<div class="input-group">
 								<span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span>
-							   	<input type="text" class="form-control" name="codigo" placeholder="Codigo ou nome" aria-describedby="basic-addon1">
+							   	<input type="text" class="form-control" name="nome" placeholder="Nome" aria-describedby="basic-addon1">
 						   	</div>
 						</div>
 					</div>
@@ -96,41 +96,33 @@ if(isset($_GET['categoria']))
 							<tr>
 								<td><b>Nome </b></td>
 								<td><b>Categoria</b></td>
-								<td><b>Custo Estimado </b></td>
-								<td><b>Duração Estimada</b></td>
 								<td></td>
 							
 							</tr>
 					<?php
-					while($projeto = mysqli_fetch_object($result))
+					while($criterio = mysqli_fetch_object($result))
 					{
-						if($projeto->cod_cat_fk == 1){
-							$categoria_p ="Pesquisa";
-						}elseif($projeto->cod_cat_fk == 2){
-							$categoria_p ="Competição Tecnológica";
-						}elseif($projeto->cod_cat_fk == 3){
-							$categoria_p ="Inovação no Ensino";
-						}elseif($projeto->cod_cat_fk == 4){
-							$categoria_p ="Manutenção e Reforma";
-						}elseif($projeto->cod_cat_fk == 5){
-							$categoria_p ="Pequenas Obras";
+						if($criterio->cod_cat_fk == 1){
+							$categoria ="Pesquisa";
+						}elseif($criterio->cod_cat_fk == 2){
+							$categoria ="Competição Tecnológica";
+						}elseif($criterio->cod_cat_fk == 3){
+							$categoria ="Inovação no Ensino";
+						}elseif($criterio->cod_cat_fk == 4){
+							$categoria ="Manutenção e Reforma";
+						}elseif($criterio->cod_cat_fk == 5){
+							$categoria ="Pequenas Obras";
 						}
 					?>
 						<tr>
 							<td>
-								<span class="detalhes"><a href="dadosProjCan.php?cod=<?php echo $projeto->codigo; ?>"><?php echo $projeto->nome_p ?></a></span>
+								<span class="detalhes"><a href="dadosCriterio.php?cod=<?php echo $criterio->cod_cri; ?>"><?php echo $criterio->nome_cri ?></a></span>
 							</td>
 							<td>
-								<span class="detalhes"><a href="dadosProjCan.php?cod=<?php echo $projeto->codigo; ?>"><?php echo $categoria_p ?></a></span>
+								<span class="detalhes"><a href="dadosCriterio.php?cod=<?php echo $criterio->cod_cri; ?>"><?php echo $categoria ?></a></span>
 							</td>
 							<td>
-								<span class="detalhes"><a href="dadosProjCan.php?cod=<?php echo $projeto->codigo; ?>"><?php echo $projeto->valor ?></a></span>
-							</td>
-							<td>
-								<span class="detalhes"><a href="dadosProjCan.php?cod=<?php echo $projeto->codigo; ?>"><?php echo $projeto->duracao ?></a></span>
-							</td>
-							<td>
-								<a class="btn btn-default btn-xs" href="dadosProjCan.php?cod=<?php echo $projeto->codigo; ?>" role="button"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Alterar</a>
+								<a class="btn btn-default btn-xs" href="dadosCriterio.php?cod=<?php echo $criterio->cod_cri; ?>" role="button"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Alterar</a>
 							</td>
 						
 						</tr>
@@ -141,7 +133,7 @@ if(isset($_GET['categoria']))
 				}else
 				{
 				?>		
-					<p class="bg-info"><b> Nenhum projeto encontrado</b></p>				
+					<p class="bg-info"><b> Nenhum criterio de avaliação encontrado</b></p>				
 				<?php
 				}
 			}

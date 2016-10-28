@@ -6,13 +6,14 @@
 
 	$nome  = $_POST['nome'];
 	$categoria  = $_POST['categoria'];
+	$peso = $_POST['peso'];
 
 	
 	$result = mysqli_query($con, "SELECT * FROM criterio WHERE nome_cri = '$nome' and cod_cat_fk = '$categoria'");
 
 	if( !mysqli_fetch_array($result) )
 	{
-		$sql = "INSERT INTO criterio (nome_cri, cod_cat_fk) VALUES ('$nome', '$categoria')";
+		$sql = "INSERT INTO criterio (nome_cri, cod_cat_fk, peso) VALUES ('$nome', '$categoria','$peso')";
 
 		mysqli_query($con, $sql);
 

@@ -66,7 +66,7 @@
 					        	<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Criterio Avaliação <span class="caret"></span></a>
 					         	<ul class="dropdown-menu">
 					         	<li><a href="../criterio/cadastroCriterio.php">Cadastrar</a></li>
-					            <li><a href="#">Consultar</a></li>
+					            <li><a href="../criterio/buscarCriterio.php">Consultar</a></li>
 					          </ul>
 					        </li>
 						</li>

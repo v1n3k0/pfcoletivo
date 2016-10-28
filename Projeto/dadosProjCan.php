@@ -57,7 +57,7 @@ $result = mysqli_query($con, "SELECT * FROM projeto WHERE codigo = '$cod'");
 						if($projeto->cod_cat_fk == 1){
 							$categoria_p ="Pesquisa";
 						}elseif($projeto->cod_cat_fk == 2){
-							$categoria_p ="Competição Tecnológic";
+							$categoria_p ="Competição Tecnológica";
 						}elseif($projeto->cod_cat_fk == 3){
 							$categoria_p ="Inovação no Ensino";
 						}elseif($projeto->cod_cat_fk == 4){
@@ -187,7 +187,7 @@ $result = mysqli_query($con, "SELECT * FROM projeto WHERE codigo = '$cod'");
 				<h3 class="panel-title">Remover dados do projeto</h3>
 			</div>
 			<div class="panel-body">
-			<form class="form-horizontal text-center" method="POST" action="?codigo=<?php echo ($cod) ?>" >
+			<form class="form-horizontal text-center" method="POST" action="deletarProjeto.php?codigo=<?php echo ($cod) ?>">
 				<div class="form-group">
 					<div class="col-dm-4 col-dm-offset-4">
 							Deseja realmente remover o projeto do sistema ?
@@ -205,17 +205,5 @@ $result = mysqli_query($con, "SELECT * FROM projeto WHERE codigo = '$cod'");
 </div>
 
 <?php } ?>
-<?php
-	if(isset($_GET['codigo'])){
-
-		$codigo = $_GET['codigo'];
-
-		$sql = "DELETE FROM projeto WHERE codigo = '$codigo'";
-
-		mysqli_query($con, $sql);
-				
-		header("Location: busProjCan.php?success=Projeto removido com sucesso!");	
-	}
- ?>
 
 <?php include_once("../footer.php") ?>
