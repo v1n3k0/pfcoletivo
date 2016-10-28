@@ -23,10 +23,11 @@
 
 <?php 
 
-$cod= $_GET['cod'];
+if(isset($_GET['cod']))
+	$cod=$_GET['cod'];
 $_SESSION["codigo"] = $cod;
 
-$result = mysqli_query($con, "SELECT * FROM projeto WHERE codigo = '$cod'");
+$result = mysqli_query($con, "SELECT * FROM projeto WHERE codigo = '$cod' and status ='candidato'");
 
 ?>
 <div class="row">
@@ -91,7 +92,7 @@ $result = mysqli_query($con, "SELECT * FROM projeto WHERE codigo = '$cod'");
 
 <?php 
 
-$result = mysqli_query($con, "SELECT * FROM projeto WHERE codigo = '$cod'");
+$result = mysqli_query($con, "SELECT * FROM projeto WHERE codigo = '$cod' and status ='candidato'");
 
 ?>
 
@@ -130,7 +131,7 @@ $result = mysqli_query($con, "SELECT * FROM projeto WHERE codigo = '$cod'");
 							<form class="form-horizontal" method="POST" action="updateProjeto.php?codigo=<?php echo $projeto->codigo; ?>&cri=<?php echo $criterio->cod_cri; ?>">
 								<td>
 									<div class="form-group">
-										<div class="col-md-4">
+										<div class="col-md-5">
 											<input type="text" class="form-control" name="nota" placeholder="Nota">
 										</div>
 									</div>
@@ -154,7 +155,9 @@ $result = mysqli_query($con, "SELECT * FROM projeto WHERE codigo = '$cod'");
 						<?php
 						}
 					}
-					?></table>
+
+					?>	<td><a href="avalProjeto.php?codigo=<?php echo $projeto->codigo; ?>"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> Avaliar projeto</a></td>
+					</table>
 				<?php
 					
 				}else

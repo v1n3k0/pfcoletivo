@@ -26,11 +26,11 @@
 if(isset($_GET['categoria']))
 {	
 	$cat = $_GET['categoria'];
-	$result = mysqli_query($con, "SELECT * FROM projeto where cod_cat_fk= '$cat'");				
+	$result = mysqli_query($con, "SELECT * FROM projeto where cod_cat_fk= '$cat' and status = 'candidato'");				
 	if ($cat == "Default"){
 		if(isset($_GET['codigo'])){
 				$cod = $_GET['codigo'];
-				$result = mysqli_query($con, "SELECT * FROM projeto where codigo = '$cod' or nome_p like'%$cod%'");
+				$result = mysqli_query($con, "SELECT * FROM projeto where status = 'candidato' and (codigo = '$cod' or nome_p like'%$cod%')");
 		}
 	}
 
