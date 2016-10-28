@@ -137,7 +137,7 @@ if(isset($_GET['categoria']))
 								<a class="btn btn-default btn-xs" href="dadosProjCan.php?cod=<?php echo $projeto->codigo; ?>" role="button"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Alterar</a>
 							</td>
 							<td>
-								<a class="btn btn-default btn-xs" href="avaliarProj.php?cod=<?php echo $projeto->codigo; ?>" role="button"><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span> Avaliar</a>
+								<a class="btn btn-default btn-xs" href="avaliarProj.php?cod=<?php echo $projeto->codigo; ?>" role="button"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Avaliar</a>
 							</td>
 						
 						</tr>
