@@ -8,7 +8,7 @@
 	<link rel="stylesheet"  href="../css/bootstrap.css">
 	<link rel="stylesheet"  href="../css/bootstrap-theme.css">
 </head>
-<body>
+<body style="background-color:white">
 
 <?php 
 	session_start();
@@ -17,9 +17,7 @@
 		$cpf = $_SESSION["cpf"];
 	}
 ?>
-
-<div class="container">
-	<div class="col-md-10 col-md-offset-1">
+<div>
 	<nav class="navbar navbar-default">
 		<div class="container-fluid">
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -28,7 +26,8 @@
 						<a href="../Home/index.php" class="navbar-brand"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> HOME</a>
 					</li>
 					<?php 
-					if( isset($_SESSION["login"])){ ?>
+					if( isset($_SESSION["login"])){ 
+					?>
 						<li>
 							<li class="dropdown">
 					        	<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Usuario <span class="caret"></span></a>
@@ -43,7 +42,8 @@
 					} 
 					?>
 					<?php 
-					if( isset($_SESSION["login"]) && ( ($_SESSION["tipo"] == "gestor") || ($_SESSION["tipo"] == "avaliador") ) ){ ?>
+					if( isset($_SESSION["login"]) && ( ($_SESSION["tipo"] == "gestor") || ($_SESSION["tipo"] == "avaliador") ) ){ 
+					?>
 						<li>
 							<li class="dropdown">
 					        	<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Projeto <span class="caret"></span></a>
@@ -52,6 +52,21 @@
 					         	<li><a href="../Projeto/cadastroProjeto.php">Cadastrar</a></li>
 					         	<?php } ?>
 					            <li><a href="../Projeto/busProjCan.php">Consultar</a></li>
+					          </ul>
+					        </li>
+						</li>
+					<?php 
+					} 
+					?>
+					<?php 
+					if( isset($_SESSION["login"]) && ( ($_SESSION["tipo"] == "gestor") || ($_SESSION["tipo"] == "avaliador") ) ){ 
+					?>
+						<li>
+							<li class="dropdown">
+					        	<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Criterio Avaliação <span class="caret"></span></a>
+					         	<ul class="dropdown-menu">
+					         	<li><a href="../criterio/cadastroCriterio.php">Cadastrar</a></li>
+					            <li><a href="#">Consultar</a></li>
 					          </ul>
 					        </li>
 						</li>
@@ -77,6 +92,11 @@
 			</div>
 		</div>
 	</nav>
+</div>
+
+<div class="container">
+	<div class="col-md-10 col-md-offset-1" style="background-color:white">
+	
 	
 
 

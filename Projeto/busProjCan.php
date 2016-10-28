@@ -98,6 +98,7 @@ if(isset($_GET['categoria']))
 								<td><b>Categoria</b></td>
 								<td><b>Custo Estimado </b></td>
 								<td><b>Duração Estimada</b></td>
+								<td></td>
 							
 							</tr>
 					<?php
