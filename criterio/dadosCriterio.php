@@ -47,7 +47,7 @@ $result = mysqli_query($con, "SELECT * FROM criterio WHERE cod_cri = '$cod'");
 								<td><b>Nome</b></td>
 								<td><b>Categoria</b></td>
 								<td><b>Peso</b></td>
-								
+								<td><b>Descrição</b></td>
 							</tr>
 					<?php
 					if($criterio = mysqli_fetch_object($result))
@@ -55,7 +55,7 @@ $result = mysqli_query($con, "SELECT * FROM criterio WHERE cod_cri = '$cod'");
 						if($criterio->cod_cat_fk == 1){
 							$categoria ="Pesquisa";
 						}elseif($criterio->cod_cat_fk == 2){
-							$categoria ="Competição Tecnológic";
+							$categoria ="Competição Tecnológica";
 						}elseif($criterio->cod_cat_fk == 3){
 							$categoria ="Inovação no Ensino";
 						}elseif($criterio->cod_cat_fk == 4){
@@ -68,6 +68,7 @@ $result = mysqli_query($con, "SELECT * FROM criterio WHERE cod_cri = '$cod'");
 						<td><span class="detalhes"><?php echo $criterio->nome_cri ?></span></td>
 						<td><span class="detalhes"><?php echo $categoria ?></span></td>
 						<td><span class="detalhes"><?php echo $criterio->peso ?></span></td>
+						<td><span class="detalhes"><?php echo $criterio->descricao ?></span></td>
 					<?php
 					}
 					?></table> <?php	
@@ -90,7 +91,7 @@ $result = mysqli_query($con, "SELECT * FROM criterio WHERE cod_cri = '$cod'");
 ?>
 
 <div class="row">
-	<div class="col-md-7">
+	<div class="col-md-12">
 		<div class="panel panel-primary">
 			<div class="panel-heading">
 				<h3 class="panel-title">Alterar dados do criterio de avaliação</h3>
@@ -121,7 +122,7 @@ $result = mysqli_query($con, "SELECT * FROM criterio WHERE cod_cri = '$cod'");
 						<div class="form-group">
 							<label class="col-md-3 control-label">Nome</label>
 							<div class="col-md-8">
-								<input type="text" class="form-control" name="nome" placeholder=<?php echo $criterio->nome_cri ?>>
+								<input type="text" class="form-control" name="nome" placeholder="<?php echo $criterio->nome_cri ?>">
 							</div>
 						</div>
 						<div class="form-group">
@@ -157,7 +158,13 @@ $result = mysqli_query($con, "SELECT * FROM criterio WHERE cod_cri = '$cod'");
 							</div>
 						</div>
 						<div class="form-group">
-						    <div class="col-md-2 col-md-offset-7">
+							<label class="col-md-3 control-label">Descrição</label>
+						    <div class="col-md-8">
+							   	<textarea class="form-control" rows="3" name="descricao"></textarea>
+						    </div>
+						</div>
+						<div class="form-group">
+						    <div class="col-md-2 col-md-offset-9">
 						      <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span> Atualizar</button>
 						    </div>
 						</div>
@@ -178,6 +185,7 @@ $result = mysqli_query($con, "SELECT * FROM criterio WHERE cod_cri = '$cod'");
 		</div>
 	</div>
 
+	<!--
 	<div class="row col-md-5 col-md-offset-0">
 		<div class="panel panel-primary">
 			<div class="panel-heading">
@@ -199,6 +207,6 @@ $result = mysqli_query($con, "SELECT * FROM criterio WHERE cod_cri = '$cod'");
 			</div>
 		</div>
 	</div>
+	-->
 </div>
-
 <?php include_once("../footer.php") ?>

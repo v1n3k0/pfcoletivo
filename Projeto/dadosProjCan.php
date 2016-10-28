@@ -128,7 +128,7 @@ $result = mysqli_query($con, "SELECT * FROM projeto WHERE codigo = '$cod'");
 						<div class="form-group">
 							<label class="col-md-3 control-label">Nome</label>
 							<div class="col-md-8">
-								<input type="text" class="form-control" name="nome" placeholder=<?php echo $projeto->nome_p ?>>
+								<input type="text" class="form-control" name="nome" placeholder="<?php echo $projeto->nome_p ?>">
 							</div>
 						</div>
 						<div class="form-group">

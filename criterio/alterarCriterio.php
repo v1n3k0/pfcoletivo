@@ -6,6 +6,7 @@
 	$nome = $_POST['nome'];
 	$categoria  = $_POST['categoria'];
 	$peso = $_POST['peso'];
+	$descricao = $_POST['descricao'];
 	
 
 	
@@ -19,6 +20,10 @@
 	}	
 	if($peso != NULL){
 		mysqli_query($con, "UPDATE criterio set peso='$peso' where cod_cri='$cod'");
+		header("Location: dadosCriterio.php?cod=$cod&success=Dados alterados com sucesso!");
+	}
+	if($descricao != NULL){
+		mysqli_query($con, "UPDATE criterio set descricao='$descricao' where cod_cri='$cod'");
 		header("Location: dadosCriterio.php?cod=$cod&success=Dados alterados com sucesso!");
 	}	
 

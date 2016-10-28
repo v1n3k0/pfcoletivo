@@ -65,6 +65,12 @@
 						</div>
 					</div>					
 					<div class="form-group">
+						<label class="col-md-3 control-label">Descrição</label>
+					    <div class="col-md-9">
+						   	<textarea class="form-control" rows="3" name="descricao"></textarea>
+					    </div>
+					</div>
+					<div class="form-group">
 					    <div class="col-md-8 col-md-offset-3">
 						   	<p class="text-danger">(*) campos de preenchimento obrigatório</p>
 					    </div>
