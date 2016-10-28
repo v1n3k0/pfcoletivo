@@ -116,7 +116,7 @@ $result = mysqli_query($con, "SELECT * FROM projeto WHERE codigo = '$cod'");
 						if($projeto->cod_cat_fk == 1){
 							$categoria_p ="Pesquisa";
 						}elseif($projeto->cod_cat_fk == 2){
-							$categoria_p ="Competição Tecnológic";
+							$categoria_p ="Competição Tecnológica";
 						}elseif($projeto->cod_cat_fk == 3){
 							$categoria_p ="Inovação no Ensino";
 						}elseif($projeto->cod_cat_fk == 4){
