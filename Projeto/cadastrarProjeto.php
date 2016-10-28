@@ -19,8 +19,7 @@
 	if(mysqli_fetch_array($result))
 	{
 		$sql = "INSERT INTO projeto (cpf, nome_p, cod_cat_fk, duracao, valor, status, descricao, video) VALUES ('$cpf', '$nome', '$categoria', '$duracao', '$valor', '$status', '$descricao', '$video')";
-		echo($cpf);
-
+	
 		mysqli_query($con, $sql);
 
 		header("Location: cadastroProjeto.php?success=Projeto Inserido com sucesso!");

@@ -27,6 +27,8 @@ Create Table criterio (
     cod_cri int NOT NULL AUTO_INCREMENT PRIMARY KEY,
     cod_cat_fk int NOT NULL,
     nome_cri varchar(30),
+    peso float,
+    descricao VARCHAR(255) NOT NULL,
     CONSTRAINT cod_cat_fk FOREIGN KEY (cod_cat_fk)REFERENCES categoria(cod_cat)
 );
 
@@ -50,6 +52,7 @@ Create Table critproj(
     cod_cri_fk int,
     cod_p_fk bigint,
     nota int,
+    comentario VARCHAR(255) NOT NULL,
     CONSTRAINT cod_cri_fk FOREIGN KEY (cod_cri_fk)REFERENCES criterio(cod_cri),
     CONSTRAINT cod_p_fk FOREIGN KEY (cod_p_fk)REFERENCES projeto(codigo),
     PRIMARY KEY(cod_cri_fk,cod_p_fk)
