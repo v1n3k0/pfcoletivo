@@ -40,11 +40,11 @@
 					    </div>
 					  </div>
 					  <div class="form-group">
-					    <div class="col-md-offset-3 col-md-2">
-					      <button type="submit" class="btn btn-default">Entrar</button>
+					    <div class="col-md-3 col-md-offset-3">
+					      <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> Entrar</button>
 					    </div>
-					    <div class="col-md-2">					    	
-					      <a class="btn btn-default" href="cadastroUsuario.php" role="button">Cadastrar</a>
+					    <div class="col-md-3">					    	
+					      <a class="btn btn-default" href="cadastroUsuario.php" role="button"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> Cadastrar</a>
 					    </div>
 					  </div>
 					</form>

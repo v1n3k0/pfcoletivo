@@ -63,14 +63,14 @@
 				<ul class="nav navbar-nav navbar-right">
 					<?php if( ! isset($_SESSION["login"])){ ?>
 					<li>
-						<a href="../Usuario/loginUsuario.php">Entrar</a>
+						<a href="../Usuario/loginUsuario.php"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> Entrar</a>
 					</li>
 					<?php }else{ ?>
 					<li>
 						<a href="../Usuario/dadosUsuario.php?cpf=<?php echo $cpf ?>" class="text-capitalize"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> <?php echo $login ?></a> 
 					</li>
 					<li>
-						<a href="../sair.php">Sair</a>
+						<a href="../sair.php"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Sair</a>
 					</li>
 					<?php } ?>
 				</ul>				

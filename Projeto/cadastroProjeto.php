@@ -82,7 +82,7 @@
 					</div>
 					<div class="form-group">
 					    <div class="col-md-2 col-md-offset-10">
-					      <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-save" aria-hidden="true"></span> Cadastrar</button>
+					      <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-floppy-save" aria-hidden="true"></span> Cadastrar</button>
 					    </div>
 					</div>
 				</form>				

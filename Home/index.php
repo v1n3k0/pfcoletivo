@@ -25,7 +25,7 @@
             <p>
                 texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto 
             </p>
-            <p><a href="#" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Mais</a></p>
+            <p><a href="#" class="btn btn-default btn-sm" role="button"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Mais</a></p>
           </div>
         </div>
       </div>
@@ -38,7 +38,7 @@
             <p>
                 texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto 
             </p>
-            <p><a href="#" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Mais</a></p>
+            <p><a href="#" class="btn btn-default btn-sm" role="button"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Mais</a></p>
           </div>
         </div>
       </div>
@@ -51,7 +51,7 @@
             <p>
                 texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto 
             </p>
-            <p><a href="#" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Mais</a></p>
+            <p><a href="#" class="btn btn-default btn-sm" role="button"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Mais</a></p>
           </div>
         </div>
       </div>

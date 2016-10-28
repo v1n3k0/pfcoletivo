@@ -70,7 +70,7 @@ if(isset($_GET['busca']))
 							<td><span class="detalhes"><a href="dadosUsuario.php?cpf=<?php echo $usuario->cpf; ?>"><?php echo $usuario->nome ?></a></span><br>
 							</td>
 							<td>
-								<p><a class="btn btn-default btn-xs" href="dadosUsuario.php?cpf=<?php echo $usuario->cpf; ?>" role="button"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Mais</a></p>
+								<a class="btn btn-default btn-xs" href="dadosUsuario.php?cpf=<?php echo $usuario->cpf; ?>" role="button"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Mais</a>
 							</td>
 						</tr>
 						

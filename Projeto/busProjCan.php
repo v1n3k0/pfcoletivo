@@ -49,7 +49,9 @@ if(isset($_GET['categoria']))
 					<div class="form-group">
 					    <label class="row col-md-3 control-label">Busca por categoria</label>
 						<div class="col-md-9">
-							<select class="form-control" name="categoria">
+							<div class="input-group">
+							<span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-filter" aria-hidden="true"></span></span>
+							<select class="form-control" name="categoria" aria-describedby="basic-addon1">
 									<option value="Default">Selecionar Opção</option> 
 									<option value="1">Pesquisa</option> 
 									<option value="2">Competição Tecnológica</option> 
@@ -57,6 +59,7 @@ if(isset($_GET['categoria']))
 									<option value="4">Manutenção e Reforma</option> 
 									<option value="5">Pequenas Obras</option>
 							</select>
+							</div>
 						</div>
 					</div>
 					<div class="form-group">
@@ -113,11 +116,21 @@ if(isset($_GET['categoria']))
 						}
 					?>
 						<tr>
-							<td><span class="detalhes"><a href="dadosProjCan.php?cod=<?php echo $projeto->codigo; ?>"><?php echo $projeto->nome_p ?></a></span></td>
-							<td><span class="detalhes"><a href="dadosProjCan.php?cod=<?php echo $projeto->codigo; ?>"><?php echo $categoria_p ?></a></span></td>
-							<td><span class="detalhes"><a href="dadosProjCan.php?cod=<?php echo $projeto->codigo; ?>"><?php echo $projeto->valor ?></a></span></td>
-							<td><span class="detalhes"><a href="dadosProjCan.php?cod=<?php echo $projeto->codigo; ?>"><?php echo $projeto->duracao ?></a></span></td>
-							<td><a class="btn btn-default btn-xs" href="dadosProjCan.php?cod=<?php echo $projeto->codigo; ?>" role="button"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Alterar</a></td>
+							<td>
+								<span class="detalhes"><a href="dadosProjCan.php?cod=<?php echo $projeto->codigo; ?>"><?php echo $projeto->nome_p ?></a></span>
+							</td>
+							<td>
+								<span class="detalhes"><a href="dadosProjCan.php?cod=<?php echo $projeto->codigo; ?>"><?php echo $categoria_p ?></a></span>
+							</td>
+							<td>
+								<span class="detalhes"><a href="dadosProjCan.php?cod=<?php echo $projeto->codigo; ?>"><?php echo $projeto->valor ?></a></span>
+							</td>
+							<td>
+								<span class="detalhes"><a href="dadosProjCan.php?cod=<?php echo $projeto->codigo; ?>"><?php echo $projeto->duracao ?></a></span>
+							</td>
+							<td>
+								<a class="btn btn-default btn-xs" href="dadosProjCan.php?cod=<?php echo $projeto->codigo; ?>" role="button"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Alterar</a>
+							</td>
 						
 						</tr>
 						
