@@ -107,7 +107,7 @@ $result = mysqli_query($con, "SELECT * FROM projeto WHERE codigo = '$cod' and st
 							<td><b>Peso</b></td>
 							<td><b>Descrição </b></td>
 							<td><b>Nota</b></td>
-							<td>Comentário</td>
+							<td><b>Comentário</b></td>
 							<td></td>
 						</tr>
 					<?php
