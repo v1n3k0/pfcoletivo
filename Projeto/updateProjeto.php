@@ -7,6 +7,15 @@
 	if(isset($_GET['cri']))
 		$cod_cri = $_GET['cri'];
 
+	
+	if(isset($_POST['url']))
+	{		
+		$url  = $_POST['url'];
+		if($url != NULL){
+			mysqli_query($con, "UPDATE projeto set video='$url' where codigo='$cod'");
+			header("Location: dadosProjCan.php?cod=$cod&success=Dados alterados com sucesso!");
+		}
+	}
 	if(isset($_POST['nome'])){	
 		$nome  = $_POST['nome'];
 		if($nome != NULL)

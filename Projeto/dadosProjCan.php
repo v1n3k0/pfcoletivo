@@ -160,10 +160,17 @@ $result = mysqli_query($con, "SELECT * FROM projeto WHERE codigo = '$cod'");
 							    </div>					    	
 						    </div>
 						</div>
+
+						<div class="form-group">
+							<label class="col-md-3	 control-label">Link vídeo</label>
+							<div class="col-md-8">
+								<input type="text" class="form-control"  name="url" placeholder="URL">
+							</div>
+						</div>
 						<div class="form-group">
 							<label class="col-md-3	 control-label">*Descrição do projeto</label>
 							<div class="col-md-8">
-								<textarea class="form-control" rows="3" name="descricao" size=255 placeholder="Descrição do projeto">
+								<textarea  class="form-control" rows="3" name="descricao" size=255> <?php echo $projeto->descricao ?>
 								</textarea>
 							</div>
 						</div>
