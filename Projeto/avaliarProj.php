@@ -130,24 +130,18 @@ $result = mysqli_query($con, "SELECT * FROM projeto WHERE codigo = '$cod' and st
 							</td>
 							<form class="form-horizontal" method="POST" action="updateProjeto.php?codigo=<?php echo $projeto->codigo; ?>&cri=<?php echo $criterio->cod_cri; ?>">
 								<td>
-									<div class="form-group">
-										<div class="col-md-5">
+										<div class="col-md-12">
 											<input type="text" class="form-control" name="nota" placeholder="Nota">
 										</div>
-									</div>
 								</td>
 								<td>
-									<div class="form-group">
-										<div class="col-md-7">
+										<div class="col-md-12">
 											<textarea class="form-control" rows="3" name="desc_nota" size=255 placeholder="Descrição da avalicação"></textarea>
 										</div>
-									</div>
 								<td>
-									<div class="form-group">
-										<div class="col-md-2">
-									     <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-floppy-save" aria-hidden="true"></span> Cadastrar</button>
+										<div class="col-md-12">
+									     <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-floppy-save" aria-hidden="true"></span> Salvar</button>
 									    </div>
-									</div>
 								</td>
 							</form>
 						</tr>
@@ -156,8 +150,9 @@ $result = mysqli_query($con, "SELECT * FROM projeto WHERE codigo = '$cod' and st
 						}
 					}
 
-					?>	<td><a href="avalProjeto.php?codigo=<?php echo $projeto->codigo; ?>"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> Avaliar projeto</a></td>
+					?>	
 					</table>
+					
 				<?php
 					
 				}else
@@ -168,6 +163,9 @@ $result = mysqli_query($con, "SELECT * FROM projeto WHERE codigo = '$cod' and st
 					}
 				
 				?>
+			</div>
+			<div class="col-md-1 col-md-offset-10">
+				<a class="btn btn-primary" href="avalProjeto.php?codigo=<?php echo $projeto->codigo; ?>"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span> Aprovar</a>
 			</div>
 		</div>
 	</div>
