@@ -63,20 +63,14 @@
 			$desc_nota = $_POST['desc_nota'];
 		$nota = $_POST['nota'];
 		if($nota != NULL){
-			$criter =  mysqli_query($con, "SELECT * FROM critproj WHERE cod_p_fk = '$cod' and cod_cri_fk='$cod_cri'");
-			if($criterio = mysqli_fetch_object($criter))
-			{
 				
-					mysqli_query($con, "UPDATE critproj set nota='$nota', comentario= '$desc_nota' where cod_p_fk='$cod' and cod_cri_fk='$cod_cri'");
-					header("Location: avaliarProj.php?cod=$cod&success=Avaliação realizada com sucesso!");
-					exit();	
+			#		mysqli_query($con, "UPDATE critproj set nota='$nota', comentario= '$desc_nota' where cod_p_fk='$cod' and cod_cri_fk='$cod_cri'");
+			#		header("Location: avaliarProj.php?cod=$cod&success=Avaliação realizada com sucesso!");
+			#		exit();	
 				
-			}else
-			{
 				mysqli_query($con, "INSERT INTO critproj (cod_cri_fk, cod_p_fk, nota, comentario) VALUES ('$cod_cri', '$cod', '$nota', $comentario)");
 				header("Location: avaliarProj.php?cod=$cod&success=Avaliação realizada com sucesso!");
 				exit();
-			}
 		}
 	}
 	

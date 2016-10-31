@@ -23,11 +23,11 @@
 		$media= $media / $count;
 	if($media < 8){
 		mysqli_query($con, "UPDATE projeto set status='reprovado', nota='$media' where codigo='$cod'");
-		header("Location: avaliarProj.php?cod=0&error=Projeto reprovado!");
+		header("Location: busProjCan.php?cod=0&error=Projeto reprovado!");
 		exit();
 	}elseif($media > 7){
 		mysqli_query($con, "UPDATE projeto set status='aprovado', nota= '$media' where codigo='$cod'");
-		header("Location: avaliarProj.php?cod=0&success=Projeto aprovado!");
+		header("Location: busProjCan.php?cod=0&success=Projeto aprovado!");
 		exit();
 	}
 	
