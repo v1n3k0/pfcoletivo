@@ -68,9 +68,9 @@
 			#		header("Location: avaliarProj.php?cod=$cod&success=Avaliação realizada com sucesso!");
 			#		exit();	
 				
-				mysqli_query($con, "INSERT INTO critproj (cod_cri_fk, cod_p_fk, nota, comentario) VALUES ('$cod_cri', '$cod', '$nota', $comentario)");
+				mysqli_query($con, "INSERT INTO critproj (cod_cri_fk, cod_p_fk, nota, comentario) VALUES ('$cod_cri', '$cod', '$nota', '$desc_nota')");
+				//exit();
 				header("Location: avaliarProj.php?cod=$cod&success=Avaliação realizada com sucesso!");
-				exit();
 		}
 	}
 	
