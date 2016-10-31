@@ -16,46 +16,30 @@
     </div>
 
     <div class="row">
+    <?php 
+        $result = mysqli_query($con, "SELECT * FROM projeto ORDER by codigo Desc;");
 
+        if(isset($result))
+        {
+          for($i = 1; $i <= 3; $i++){
+          $projeto = mysqli_fetch_object($result);
+     ?>
       <div class="col-sm-6 col-md-4">
         <div class="thumbnail">
-          <img src="../image/242x200.svg" alt="imagem">
+          <!--<img src="../image/242x200.svg" alt="imagem">-->
+          <div class="embed-responsive embed-responsive-4by3">
+             <iframe class="embed-responsive-item" src="<?php echo $projeto->video ?>"></iframe>
+          </div>
           <div class="caption">
-            <h3>Projeto 1</h3>
-            <p>
-                texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto 
-            </p>
-            <p><a href="#" class="btn btn-default btn-sm" role="button"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Mais</a></p>
+            <h3><?php echo $projeto->nome_p ?></h3>
+            <p><?php echo $projeto->descricao ?></p>
+            <p><a href="../Projeto/mostraProjeto.php?cod=<?php echo $projeto->codigo ?>" class="btn btn-default btn-sm" role="button"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Mais</a></p>
           </div>
         </div>
       </div>
-      
-      <div class="col-sm-6 col-md-4">
-        <div class="thumbnail">
-          <img src="../image/242x200.svg" alt="imagem">
-          <div class="caption">
-            <h3>Projeto 2</h3>
-            <p>
-                texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto 
-            </p>
-            <p><a href="#" class="btn btn-default btn-sm" role="button"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Mais</a></p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-sm-6 col-md-4">
-        <div class="thumbnail">
-          <img src="../image/242x200.svg" alt="imagem">
-          <div class="caption">
-            <h3>Projeto 3</h3>
-            <p>
-                texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto 
-            </p>
-            <p><a href="#" class="btn btn-default btn-sm" role="button"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Mais</a></p>
-          </div>
-        </div>
-      </div>
-
-    </div>
+      <?php
+          }
+        }
+       ?>
     
 <?php include_once("../footer.php") ?>

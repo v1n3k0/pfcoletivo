@@ -9,6 +9,17 @@
 	if(isset($result))
 	{
 		$projeto = mysqli_fetch_object($result);
+		if($projeto->cod_cat_fk == 1){
+			$categoria ="Pesquisa";
+		}elseif($projeto->cod_cat_fk == 2){
+			$categoria ="Competição Tecnológica";
+		}elseif($projeto->cod_cat_fk == 3){
+			$categoria ="Inovação no Ensino";
+		}elseif($projeto->cod_cat_fk == 4){
+			$categoria ="Manutenção e Reforma";
+		}elseif($projeto->cod_cat_fk == 5){
+			$categoria ="Pequenas Obras";
+		}
  ?>
 
 <div class="row">
@@ -37,7 +48,7 @@
 				<div class="row">
 					<dl>
 					  <dt>Meta R$: <?php echo $projeto->valor ?></dt>
-					  <dd>Campanha: Tudo-ou-nada</dd>
+					  <dd><b>Categoria:</b> <?php echo $categoria ?></dd>
 					</dl>
 				</div>
 			</div>
