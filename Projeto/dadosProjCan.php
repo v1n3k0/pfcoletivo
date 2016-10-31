@@ -170,8 +170,7 @@ $result = mysqli_query($con, "SELECT * FROM projeto WHERE codigo = '$cod'");
 						<div class="form-group">
 							<label class="col-md-3	 control-label">*Descrição do projeto</label>
 							<div class="col-md-8">
-								<textarea  class="form-control" rows="3" name="descricao" size=255> <?php echo $projeto->descricao ?>
-								</textarea>
+								<textarea  class="form-control" rows="3" name="descricao" size=255 placeholder=<?php echo $projeto->descricao ?>></textarea>
 							</div>
 						</div>
 						<div class="form-group">

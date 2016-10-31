@@ -160,7 +160,7 @@ $result = mysqli_query($con, "SELECT * FROM criterio WHERE cod_cri = '$cod'");
 						<div class="form-group">
 							<label class="col-md-3 control-label">Descrição</label>
 						    <div class="col-md-8">
-							   	<textarea class="form-control" rows="3" name="descricao"></textarea>
+							   	<textarea class="form-control" rows="3" name="descricao" placeholder=<?php echo $criterio->descricao ?>></textarea>
 						    </div>
 						</div>
 						<div class="form-group">

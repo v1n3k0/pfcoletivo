@@ -67,7 +67,7 @@
 					<div class="form-group">
 						<label class="col-md-3 control-label">Descrição</label>
 					    <div class="col-md-9">
-						   	<textarea class="form-control" rows="3" name="descricao"></textarea>
+						   	<textarea class="form-control" rows="3" name="descricao" placeholder="Descrição do projeto"></textarea>
 					    </div>
 					</div>
 					<div class="form-group">
