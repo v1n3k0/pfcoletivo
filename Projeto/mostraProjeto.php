@@ -30,7 +30,8 @@
 			$contar = $count['total'];
 		}
 
-		$porcentagem = ($soma / $projeto->valor) * 100;
+		$numero = ($soma / $projeto->valor) * 100;
+        $porcentagem = number_format($numero, 2);
  ?>
 
 <div class="row">
@@ -47,12 +48,9 @@
 		<div class="row list-group-item" style="background-color: white">
 			<div class="col-md-10 col-md-offset-1">
 				<div class="row">
-					<h3><strong>R$ <?php echo $soma ?></strong> <br>
+					<h3><strong>R$ <?php echo number_format($soma, 2, ',', '.') ?></strong> <br>
 					<small>apoiados por <strong> <?php echo $contar ?> pessoas</strong></small>
 					</h3>
-				</div>
-				<div class="row">
-					
 				</div>
 				<div class="row">
 					<div class="progress">
@@ -63,7 +61,7 @@
 				</div>			
 				<div class="row">
 					<dl>
-					  <dt>Meta R$: <?php echo $projeto->valor ?></dt>
+					  <dt>Meta R$: <?php echo number_format($projeto->valor, 2, ',', '.') ?></dt>
 					  <dd><b>Categoria:</b> <?php echo $categoria ?></dd>
 					</dl>
 				</div>
