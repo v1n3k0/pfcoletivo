@@ -94,6 +94,7 @@ if(isset($_GET['categoria']))
 		  			<div class="panel-heading">Resultado</div>
 					<table class="table table-striped">
 							<tr>
+								<td></td>
 								<td><b>Nome </b></td>
 								<td><b>Categoria</b></td>
 								<td><b>Custo Estimado </b></td>
@@ -118,6 +119,9 @@ if(isset($_GET['categoria']))
 						}
 					?>
 						<tr>
+							<td> 
+								<img src='fotos/<?php echo $projeto->imagem ?>' alt='Foto de Exibição' heigh="50" width="50"  />
+							</td>
 							<td>
 								<span class="detalhes"><a href="dadosProjCan.php?cod=<?php echo $projeto->codigo; ?>"><?php echo $projeto->nome_p ?></a></span>
 							</td>

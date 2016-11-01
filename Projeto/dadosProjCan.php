@@ -43,6 +43,7 @@ $result = mysqli_query($con, "SELECT * FROM projeto WHERE codigo = '$cod'");
 				
 					?><table class="table table-striped">
 							<tr>
+								<td></td>
 								<td><b>Codigo</b></td>
 								<td><b>Nome</b></td>
 								<td><b>Categoria</b></td>
@@ -65,7 +66,8 @@ $result = mysqli_query($con, "SELECT * FROM projeto WHERE codigo = '$cod'");
 						}elseif($projeto->cod_cat_fk == 5){
 							$categoria_p ="Pequenas Obras";
 						}
-					?>					
+					?>	
+						<td><img src='fotos/<?php echo $projeto->imagem ?>' alt='Foto de Exibição' heigh="80" width="80"  /></td>				
 						<td><span class="detalhes"><?php echo $projeto->codigo ?></span></td>
 						<td><span class="detalhes"><?php echo $projeto->nome_p ?></span></td>
 						<td><span class="detalhes"><?php echo $categoria_p ?></span></td>
@@ -109,7 +111,7 @@ $result = mysqli_query($con, "SELECT * FROM projeto WHERE codigo = '$cod'");
 					if(mysqli_num_rows($result) > 0)
 					{
 				?>
-				<form class="form-horizontal" method="POST" action="updateProjeto.php?codigo=<?php echo ($cod) ?>">
+				<form class="form-horizontal" method="POST" enctype="multipart/form-data" action="updateProjeto.php?codigo=<?php echo ($cod) ?>">
 					<?php
 					if($projeto = mysqli_fetch_object($result))
 					{
@@ -125,6 +127,12 @@ $result = mysqli_query($con, "SELECT * FROM projeto WHERE codigo = '$cod'");
 							$categoria_p ="Pequenas Obras";
 						}
 					?>
+						<div class="form-group">
+							<label class="col-md-3	 control-label">Imagem</label>
+							<div class="col-md-9">
+								<input type="file" name="arquivo">
+							</div>
+						</div>
 						<div class="form-group">
 							<label class="col-md-3 control-label">Nome</label>
 							<div class="col-md-8">

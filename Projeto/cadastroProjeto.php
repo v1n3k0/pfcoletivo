@@ -27,11 +27,17 @@
 					<h3 class="panel-title">Cadastrar de Projeto</h3>
 			</div>
 			<div class="panel-body">
-				<form class="form-horizontal" method="POST" action="cadastrarProjeto.php" >
+				<form class="form-horizontal" method="POST" action="cadastrarProjeto.php" enctype="multipart/form-data" >
 					<div class="form-group">
 					<label class="col-md-3	 control-label">*Nome do Projeto</label>
 						<div class="col-md-9">
 							<input type="text" class="form-control" name="nome" placeholder="Nome do Projeto">
+						</div>
+					</div>
+					<div class="form-group">
+					<label class="col-md-3	 control-label">Imagem</label>
+						<div class="col-md-9">
+							<input type="file" name="arquivo">
 						</div>
 					</div>
 					<div class="form-group">
