@@ -52,6 +52,9 @@
 					         	<li><a href="../Projeto/cadastroProjeto.php">Cadastrar</a></li>
 					         	<?php } ?>
 					            <li><a href="../Projeto/busProjCan.php">Consultar</a></li>
+					            <?php if( $_SESSION["tipo"] == "gestor" ){ ?>
+					         	<li><a href="../Projeto/busProjFin.php">Finalizar</a></li>
+					         	<?php } ?>
 					          </ul>
 					        </li>
 						</li>
