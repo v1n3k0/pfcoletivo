@@ -18,7 +18,7 @@
 		}
 	}
 
-	if(isset($_FILES['arquivo']))
+	if($_FILES['arquivo']['size'] > 0)
 	{
 		// Pasta onde o arquivo vai ser salvo
 		$_UP['pasta'] = 'fotos/';

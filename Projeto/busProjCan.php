@@ -120,7 +120,7 @@ if(isset($_GET['categoria']))
 					?>
 						<tr>
 							<td> 
-								<img src='fotos/<?php echo $projeto->imagem ?>' alt='Foto de Exibição' heigh="50" width="50"  />
+								<img src='fotos/<?php echo $projeto->imagem ?>' alt='Foto de Exibição' heigh="80" width="80"  />
 							</td>
 							<td>
 								<span class="detalhes"><a href="dadosProjCan.php?cod=<?php echo $projeto->codigo; ?>"><?php echo $projeto->nome_p ?></a></span>
