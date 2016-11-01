@@ -74,7 +74,15 @@
 					} 
 					?>
 				</ul>
-				
+				<form class="navbar-form navbar-left" method="POST" action="../Projeto/busProjApr.php">
+			        <div class="form-group">
+			          	<div class="input-group">
+							<span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span>
+							<input type="text" class="form-control" name="nome" placeholder="Buscar Projetos" aria-describedby="basic-addon1">
+						</div>
+			        </div>
+			        <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> Buscar</button>
+			     </form>				
 				<ul class="nav navbar-nav navbar-right">
 					<?php if( ! isset($_SESSION["login"])){ ?>
 					<li>
