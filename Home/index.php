@@ -55,6 +55,7 @@
           }
         }
        ?>
+    </div> 
     <div class="row">
        <h2>Populares</h2> 
     </div>
@@ -98,4 +99,5 @@
           }
         }
        ?>
+      </div> 
 <?php include_once("../footer.php") ?>

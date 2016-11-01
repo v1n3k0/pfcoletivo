@@ -67,7 +67,7 @@ $result = mysqli_query($con, "SELECT * FROM projeto WHERE codigo = '$cod'");
 							$categoria_p ="Pequenas Obras";
 						}
 					?>	
-						<td><img src='fotos/<?php echo $projeto->imagem ?>' alt='Foto de Exibição' heigh="80" width="80"  /></td>				
+						<td><img src='fotos/<?php echo $projeto->imagem ?>' alt='Foto de Exibição' heigh="50" width="50"  /></td>				
 						<td><span class="detalhes"><?php echo $projeto->codigo ?></span></td>
 						<td><span class="detalhes"><?php echo $projeto->nome_p ?></span></td>
 						<td><span class="detalhes"><?php echo $categoria_p ?></span></td>
