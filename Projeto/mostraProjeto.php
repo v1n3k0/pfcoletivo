@@ -19,6 +19,18 @@
 		}elseif($projeto->cod_cat_fk == 5){
 			$categoria ="Pequenas Obras";
 		}
+
+		$sql = mysqli_query($con, "SELECT sum(valor_doado) AS total FROM financiar WHERE cod_p_fk = '$cod'");
+		if($sum = mysqli_fetch_array($sql)){
+			$soma = $sum['total'];
+		}
+
+		$sql = mysqli_query($con, "SELECT COUNT(cpf_fk) AS total FROM financiar WHERE cod_p_fk = '$cod'");
+		if($count = mysqli_fetch_array($sql)){
+			$contar = $count['total'];
+		}
+
+		$porcentagem = ($soma / $projeto->valor) * 100;
  ?>
 
 <div class="row">
@@ -35,12 +47,17 @@
 		<div class="row list-group-item" style="background-color: white">
 			<div class="col-md-10 col-md-offset-1">
 				<div class="row">
-					<h3><strong>R$ 500,00*</strong></h3>
+					<h3><strong>R$ <?php echo $soma ?></strong> <br>
+					<small>apoiados por <strong> <?php echo $contar ?> pessoas</strong></small>
+					</h3>
+				</div>
+				<div class="row">
+					
 				</div>
 				<div class="row">
 					<div class="progress">
-					  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-					    60%
+					  <div class="progress-bar" role="progressbar" aria-valuenow="<?php echo $porcentagem ?>" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $porcentagem ?>%;">
+					    <?php echo $porcentagem ?>%
 					  </div>
 					</div>
 				</div>			
