@@ -24,7 +24,6 @@
 <?php 
 
 $cod= $_GET['cod'];
-$_SESSION["codigo"] = $cod;
 
 $result = mysqli_query($con, "SELECT * FROM projeto WHERE codigo = '$cod'");
 
@@ -202,7 +201,6 @@ $result = mysqli_query($con, "SELECT * FROM projeto WHERE codigo = '$cod'");
 			</div>
 		</div>
 	</div>
-
 	<div class="row col-md-5 col-md-offset-0">
 		<div class="panel panel-primary">
 			<div class="panel-heading">
