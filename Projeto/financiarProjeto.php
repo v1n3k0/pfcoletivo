@@ -8,7 +8,7 @@
 	$cod = $_GET['cod'];
 	$valor  = $_POST['valor'];
 	$forma  = $_POST['forma'];
-	$data = date('h-i-s g:i');
+	$data = date('Y-m-d');
 
 
 	if(isset($cod))
