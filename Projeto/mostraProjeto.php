@@ -1,5 +1,29 @@
 <?php include_once("../header.php") ?>
 
+<div class="mensagme text-center col-md-12">
+	<?php 
+
+	if(isset($_GET['error']))
+	{
+		?> 
+			<p class="bg-danger" style="color:red"><?php echo $_GET['error'] ?></p>
+		<?php
+	} 
+	else if(isset($_GET['success']))
+	{
+		?> 
+			<p class="bg-success" style="color:green"><?php echo $_GET['success'] ?></p>
+		<?php
+	}
+
+
+	?>
+
+	<?php 
+		$cod = $_GET['cod'];
+	 ?>
+</div>
+
 <?php 
 	$cod= $_GET['cod'];
 
@@ -69,7 +93,7 @@
 		</div>
 		<div class="row list-group-item">
 			<div class="col-md-2 col-md-offset-2">					    	
-				<a class="btn btn-primary" href="#" role="button"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> Apoiar Projeto</a>
+				<a class="btn btn-primary" href="financiaProjeto.php?cod=<?php echo $cod ?>" role="button"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> Apoiar Projeto</a>
 			</div>
 		</div>
 	</div>		
