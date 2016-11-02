@@ -143,7 +143,6 @@ $result = mysqli_query($con, "SELECT * FROM criterio WHERE cod_cri = '$cod'");
 							<div class="col-md-8">
 								<select class="form-control" name="peso">
 										<option value=<?php echo $criterio->peso ?>><?php echo $criterio->peso ?></option>
-										<option value="0">0</option> 
 										<option value="1">1</option> 
 										<option value="2">2</option> 
 										<option value="3">3</option> 
