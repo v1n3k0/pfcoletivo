@@ -61,7 +61,7 @@
     </div>
     <div class="row">
     <?php 
-        $result = mysqli_query($con, "SELECT *, sum(valor_doado) AS total FROM financiar GROUP BY cod_p_fk LIMIT 3");     
+        $result = mysqli_query($con, "SELECT *, sum(valor_doado) AS total FROM financiar GROUP BY cod_p_fk ORDER by total Desc LIMIT 3");     
 
         if(isset($result))
         {
