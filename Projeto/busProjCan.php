@@ -101,7 +101,6 @@ if(isset($_GET['categoria']))
 								<td><b>Duração Estimada</b></td>
 								<td><b>Descrição</b></td>
 								<td></td>
-								<td></td>
 							</tr>
 					<?php
 					while($projeto = mysqli_fetch_object($result))
@@ -139,7 +138,10 @@ if(isset($_GET['categoria']))
 							</td>
 							<td>
 								<div class="form-group">
-								<a class="btn btn-default btn-xs" href="dadosProjCan.php?cod=<?php echo $projeto->codigo; ?>" role="button"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Alterar</a></div>
+								<a class="btn btn-default btn-xs" href="avaliarProj.php?cod=<?php echo $projeto->codigo; ?>" role="button"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Avaliar</a>
+								
+								<a class="btn btn-default btn-xs" href="dadosProjCan.php?cod=<?php echo $projeto->codigo; ?>" role="button"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Alterar</a>
+								</div>
 								<div class="form-group">
 								<?php
 								$result2 = mysqli_query($con, "SELECT * FROM critproj where cod_p_fk= '$projeto->codigo'");
@@ -148,10 +150,6 @@ if(isset($_GET['categoria']))
 								<a class="btn btn-default btn-xs" <?php if( $pro2 =mysqli_fetch_object($result2)){?> href="../Avaliacao/conAval.php?cod=<?php echo $projeto->codigo;?>" role="button"><?php } else{ ?> disabled > <?php }?> <span class="glyphicon glyphicon-search" aria-hidden="true" ></span> Consultar Avaliação</a>
 								</div>
 							</td>
-							<td>
-								<a class="btn btn-default btn-xs" href="avaliarProj.php?cod=<?php echo $projeto->codigo; ?>" role="button"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Avaliar</a>
-							</td>
-						
 						</tr>
 						
 						<?php
