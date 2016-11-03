@@ -96,7 +96,7 @@ $result = mysqli_query($con, "SELECT * FROM projeto WHERE codigo = '$cod' and st
 
 ?>
 
-<?php if( $_SESSION["tipo"] == "gestor" ){ ?>
+<?php if( $_SESSION["tipo"] == "avaliador" ){ ?>
 <div class="row">
 	<div class="col-md-12">
 		<div class="panel panel-primary">
