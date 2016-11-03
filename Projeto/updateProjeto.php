@@ -6,11 +6,9 @@
 		$cod = $_GET['codigo'];
 	if(isset($_GET['cri']))
 		$cod_cri = $_GET['cri'];
-	$result = mysqli_query($con, "SELECT * FROM projeto where codigo= '$cod'");
-	$projeto = mysqli_fetch_object($result);
 	
 	
-	if((isset($_POST['desc_cri'])) || ($_POST['nota_cri']))
+	if((isset($_POST['desc_cri'])) || (isset($_POST['nota_cri'])))
 	{		
 		if(isset($_POST['desc_cri']))
 			$desc_cri  = $_POST['desc_cri'];
@@ -18,13 +16,13 @@
 			$nota_cri  = $_POST['nota_cri'];
 		if(($desc_cri != NULL) && ($nota_cri != NULL)){
 			mysqli_query($con, "UPDATE critproj set comentario='$desc_cri', nota='$nota_cri' where cod_cri_fk='$cod_cri' and cod_p_fk= '$cod'");
-			header("Location: dadosProjCan.php?cod=$cod&success=Dados alterados com sucesso!");
+			header("Location: dadosProjCan.php?cod=$cod&success=Nota e descrição alterados com sucesso!");
 		}elseif(($desc_cri != NULL)){
 			mysqli_query($con, "UPDATE critproj set comentario='$desc_cri'where cod_cri_fk='$cod_cri' and cod_p_fk= '$cod'");
-			header("Location: dadosProjCan.php?cod=$cod&success=Dados alterados com sucesso!");		
+			header("Location: dadosProjCan.php?cod=$cod&success=Descrição alterada com sucesso!");		
 		}elseif(($nota_cri != NULL)){
 			mysqli_query($con, "UPDATE critproj set nota= '$nota_cri' where cod_cri_fk='$cod_cri' and cod_p_fk= '$cod'");
-			header("Location: dadosProjCan.php?cod=$cod&success=Dados alterados com sucesso!");			
+			header("Location: dadosProjCan.php?cod=$cod&success=Nota alterada com sucesso!");			
 		}
 	}
 
@@ -33,7 +31,7 @@
 		$url  = $_POST['url'];
 		if($url != NULL){
 			mysqli_query($con, "UPDATE projeto set video='$url' where codigo='$cod'");
-			header("Location: dadosProjCan.php?cod=$cod&success=Dados alterados com sucesso!");
+			header("Location: dadosProjCan.php?cod=$cod&success=Url alterada com sucesso!");
 		}
 	}
 
@@ -43,23 +41,16 @@
 		if($nome != NULL)
 		{
 			mysqli_query($con, "UPDATE projeto set nome_p='$nome' where codigo='$cod'");
-			header("Location: dadosProjCan.php?cod=$cod&success=Dados alterados com sucesso!");
+			header("Location: dadosProjCan.php?cod=$cod&success=Nome alterado com sucesso!");
 		}
 	}
-	if(isset($_POST['categoria']))
-	{		
-		$categoria  = $_POST['categoria'];
-		if($categoria != NULL){
-			mysqli_query($con, "UPDATE projeto set cod_cat_fk='$categoria' where codigo='$cod'");
-			header("Location: dadosProjCan.php?cod=$cod&success=Dados alterados com sucesso!");
-		}
-	}
+	
 	if(isset($_POST['duracao']))
 	{		
 		$duracao     = $_POST['duracao'];
 		if($duracao != NULL){
 			mysqli_query($con, "UPDATE projeto set duracao='$duracao' where codigo='$cod'");
-			header("Location: dadosProjCan.php?cod=$cod&success=Dados alterados com sucesso!");
+			header("Location: dadosProjCan.php?cod=$cod&success=Duração alterado com sucesso!");
 		}
 	}
 	if(isset($_POST['valor']))		
@@ -67,7 +58,7 @@
 		$valor  = $_POST['valor'];
 		if($valor != NULL){
 			mysqli_query($con, "UPDATE projeto set valor='$valor' where codigo='$cod'");
-			header("Location: dadosProjCan.php?cod=$cod&success=Dados alterados com sucesso!");
+			header("Location: dadosProjCan.php?cod=$cod&success=Valor previsto alterado com sucesso!");
 		}
 	}
 	if(isset($_POST['descricao']))		
@@ -75,7 +66,7 @@
 		$desc = $_POST['descricao'];	
 		if($desc != NULL){
 			mysqli_query($con, "UPDATE projeto set descricao='$desc' where codigo='$cod'");
-			header("Location: dadosProjCan.php?cod=$cod&success=Dados alterados com sucesso!");
+			header("Location: dadosProjCan.php?cod=$cod&success=Descrição alterada com sucesso!");
 		}
 	}
 
@@ -95,6 +86,8 @@
 				header("Location: avaliarProj.php?cod=$cod&success=Avaliação realizada com sucesso!");
 		}
 	}
+	$result = mysqli_query($con, "SELECT * FROM projeto where codigo= '$cod'");
+	$projeto = mysqli_fetch_object($result);
 	if($_FILES['arquivo']['size'] > 0)
 	{
 		// Pasta onde o arquivo vai ser salvo
@@ -129,26 +122,34 @@
 		// Primeiro verifica se deve trocar o nome do arquivo
 		if ($_UP['renomeia'] == true) {
 		  // Cria um nome baseado no UNIX TIMESTAMP atual e com extensão .jpg
-		  $nome_final = $projeto->cpf.$projeto->nome.'.jpg';
+		  $nome_final = $projeto->cpf.$projeto->nome_p.'.jpg';
 		} else {
 		  // Mantém o nome original do arquivo
-		  $nome_final = $projeto->cpf.$projeto->nome.'.jpg';
+		  $nome_final = $projeto->cpf.$projeto->nome_p.'.jpg';
 		}
 		  
 		// Depois verifica se é possível mover o arquivo para a pasta escolhida
 		if (move_uploaded_file($_FILES['arquivo']['tmp_name'], $_UP['pasta'] . $nome_final)) {
 		  // Upload efetuado com sucesso, exibe uma mensagem e um link para o arquivo
 			$sql = "UPDATE projeto set imagem='$nome_final' where codigo='$cod'";
-	
+			
 			mysqli_query($con, $sql);
 	
-		header("Location:dadosProjCan.php?cod=$cod&success=Dados alterados com sucesso!");
+		header("Location:dadosProjCan.php?cod=$cod&success=Imagem alterada com sucesso!");
 		#  echo "Upload efetuado com sucesso!";
 		#  echo '<a href="' . $_UP['pasta'] . $nome_final . '">Clique aqui para acessar o arquivo</a>';
 		} else {
 		  // Não foi possível fazer o upload, provavelmente a pasta está incorreta
 		  header("Location: dadosProjCan.php?cod=$cod&error=Imagem invalida!");
 		}	
+	}
+	if(isset($_POST['categoria']))
+	{		
+		$categoria  = $_POST['categoria'];
+		if($categoria != 0){
+			mysqli_query($con, "UPDATE projeto set cod_cat_fk='$categoria' where codigo='$cod'");
+			header("Location: dadosProjCan.php?cod=$cod&success=Categoria alterado com sucesso!");
+		}
 	}
 
 	

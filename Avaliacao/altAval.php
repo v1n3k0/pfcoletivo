@@ -96,7 +96,7 @@ $result = mysqli_query($con, "SELECT * FROM projeto WHERE codigo = '$cod'");
 
 ?>
 
-<?php if( $_SESSION["tipo"] == "gestor" ){ 
+<?php if( $_SESSION["tipo"] == "avaliador" ){ 
 	$result = mysqli_query($con, "SELECT * FROM critproj WHERE cod_p_fk = '$projeto->codigo'");
 	if(mysqli_num_rows($result) > 0)
 	{

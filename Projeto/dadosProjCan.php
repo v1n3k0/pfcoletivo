@@ -142,7 +142,7 @@ $result = mysqli_query($con, "SELECT * FROM projeto WHERE codigo = '$cod'");
 						    <label class="col-md-3 control-label">Categoria</label>
 							<div class="col-md-8">
 								<select class="form-control" name="categoria">
-										<option value=<?php echo $projeto->cod_cat_fk ?>><?php echo $categoria_p ?></option>
+										<option value="0"><?php echo $categoria_p ?></option>
 										<option value="1">Pesquisa</option> 
 										<option value="2">Competição Tecnológica</option> 
 										<option value="3">Inovação no Ensino</option> 
