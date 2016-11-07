@@ -152,8 +152,8 @@ if(isset($_GET['categoria']))
 				  			<div class="panel-heading">Pesquisa</div>
 							<table class="table table-striped">
 									<tr>
-										<td><b>Nome</b></td>
-										<td><b>Valor Investido</b></td>
+										<td class="col-md-6"><b>Nome</b></td>
+										<td class="col-md-6"><b>Valor Investido</b></td>
 									</tr>
 							<?php
 							$total = 0;
@@ -166,10 +166,10 @@ if(isset($_GET['categoria']))
 								}
 							?>
 								<tr>
-									<td>
+									<td class="col-md-6">
 										<span class="detalhes"><a href="/pfcoletivo/Projeto/mostraProjeto.php?cod=<?php echo $projeto->codigo; ?>"><?php echo $projeto->nome_p ?></a></span>
 									</td>
-									<td>
+									<td class="col-md-6">
 										<span class="detalhes"><a href="/pfcoletivo/Projeto/mostraProjeto.php?cod=<?php echo $projeto->codigo; ?>"><?php if(isset($soma)){ echo $soma; } else { echo '0'; } ?></a></span>
 									</td>
 								</tr>
@@ -178,10 +178,10 @@ if(isset($_GET['categoria']))
 							}
 					?>
 					<tr>
-						<td>
+						<td class="col-md-6">
 							Total
 						</td>
-						<td>
+						<td class="col-md-6">
 							<?php echo $total ?>
 						</td>
 					</tr>
@@ -200,8 +200,8 @@ if(isset($_GET['categoria']))
 				  			<div class="panel-heading">Competição Tecnológica</div>
 							<table class="table table-striped">
 									<tr>
-										<td><b>Nome</b></td>
-										<td><b>Valor Investido</b></td>
+										<td class="col-md-6"><b>Nome</b></td>
+										<td class="col-md-6"><b>Valor Investido</b></td>
 									</tr>
 							<?php
 							$total = 0;
@@ -214,10 +214,10 @@ if(isset($_GET['categoria']))
 								}
 							?>
 								<tr>
-									<td>
+									<td class="col-md-6">
 										<span class="detalhes"><a href="/pfcoletivo/Projeto/mostraProjeto.php?cod=<?php echo $projeto->codigo; ?>"><?php echo $projeto->nome_p ?></a></span>
 									</td>
-									<td>
+									<td class="col-md-6">
 										<span class="detalhes"><a href="/pfcoletivo/Projeto/mostraProjeto.php?cod=<?php echo $projeto->codigo; ?>"><?php if(isset($soma)){ echo $soma; } else { echo '0'; } ?></a></span>
 									</td>
 								</tr>
@@ -227,10 +227,10 @@ if(isset($_GET['categoria']))
 
 							?>
 							<tr>
-								<td>
+								<td class="col-md-6">
 									Total
 								</td>
-								<td>
+								<td class="col-md-6">
 									<?php echo $total ?>
 								</td>
 							</tr>
@@ -249,8 +249,8 @@ if(isset($_GET['categoria']))
 				  			<div class="panel-heading">Inovação no Ensino</div>
 							<table class="table table-striped">
 									<tr>
-										<td><b>Nome</b></td>
-										<td><b>Valor Investido</b></td>
+										<td class="col-md-6"><b>Nome</b></td>
+										<td class="col-md-6"><b>Valor Investido</b></td>
 									</tr>
 							<?php
 							$total = 0;
@@ -263,10 +263,10 @@ if(isset($_GET['categoria']))
 								}
 							?>
 								<tr>
-									<td>
+									<td class="col-md-6">
 										<span class="detalhes"><a href="/pfcoletivo/Projeto/mostraProjeto.php?cod=<?php echo $projeto->codigo; ?>"><?php echo $projeto->nome_p ?></a></span>
 									</td>
-									<td>
+									<td class="col-md-6">
 										<span class="detalhes"><a href="/pfcoletivo/Projeto/mostraProjeto.php?cod=<?php echo $projeto->codigo; ?>"><?php if(isset($soma)){ echo $soma; } else { echo '0'; } ?></a></span>
 									</td>
 								</tr>
@@ -276,10 +276,10 @@ if(isset($_GET['categoria']))
 						
 							?>
 							<tr>
-								<td>
+								<td class="col-md-6">
 									Total
 								</td>
-								<td>
+								<td class="col-md-6">
 									<?php echo $total ?>
 								</td>
 							</tr>
@@ -298,8 +298,8 @@ if(isset($_GET['categoria']))
 				  			<div class="panel-heading">Manutenção e Reforma</div>
 							<table class="table table-striped">
 									<tr>
-										<td><b>Nome</b></td>
-										<td><b>Valor Investido</b></td>
+										<td class="col-md-6"><b>Nome</b></td>
+										<td class="col-md-6"><b>Valor Investido</b></td>
 									</tr>
 							<?php
 							$total = 0;
@@ -312,10 +312,10 @@ if(isset($_GET['categoria']))
 								}
 							?>
 								<tr>
-									<td>
+									<td class="col-md-6">
 										<span class="detalhes"><a href="/pfcoletivo/Projeto/mostraProjeto.php?cod=<?php echo $projeto->codigo; ?>"><?php echo $projeto->nome_p ?></a></span>
 									</td>
-									<td>
+									<td class="col-md-6">
 										<span class="detalhes"><a href="/pfcoletivo/Projeto/mostraProjeto.php?cod=<?php echo $projeto->codigo; ?>"><?php if(isset($soma)){ echo $soma; } else { echo '0'; } ?></a></span>
 									</td>
 								</tr>
@@ -325,10 +325,10 @@ if(isset($_GET['categoria']))
 						
 						?>
 						<tr>
-							<td>
+							<td class="col-md-6">
 								Total
 							</td>
-							<td>
+							<td class="col-md-6">
 								<?php echo $total ?>
 							</td>
 						</tr>
@@ -347,8 +347,8 @@ if(isset($_GET['categoria']))
 				  			<div class="panel-heading">Pequenas Obras</div>
 							<table class="table table-striped">
 									<tr>
-										<td><b>Nome</b></td>
-										<td><b>Valor Investido</b></td>
+										<td class="col-md-6"><b>Nome</b></td>
+										<td class="col-md-6"><b>Valor Investido</b></td>
 									</tr>
 							<?php
 							$total = 0;
@@ -361,10 +361,10 @@ if(isset($_GET['categoria']))
 								}
 							?>
 								<tr>
-									<td>
+									<td class="col-md-6">
 										<span class="detalhes"><a href="/pfcoletivo/Projeto/mostraProjeto.php?cod=<?php echo $projeto->codigo; ?>"><?php echo $projeto->nome_p ?></a></span>
 									</td>
-									<td>
+									<td class="col-md-6">
 										<span class="detalhes"><a href="/pfcoletivo/Projeto/mostraProjeto.php?cod=<?php echo $projeto->codigo; ?>"><?php if(isset($soma)){ echo $soma; } else { echo '0'; } ?></a></span>
 									</td>
 								</tr>
@@ -373,10 +373,10 @@ if(isset($_GET['categoria']))
 							}
 							?>
 					<tr>
-						<td>
+						<td class="col-md-6">
 							Total
 						</td>
-						<td>
+						<td class="col-md-6">
 							<?php echo $total ?>
 						</td>
 					</tr>
