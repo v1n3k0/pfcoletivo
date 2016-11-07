@@ -76,6 +76,20 @@
 					<?php 
 					} 
 					?>
+					<?php 
+					if( isset($_SESSION["login"])){ 
+					?>
+						<li>
+							<li class="dropdown">
+					        	<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Relatório <span class="caret"></span></a>
+					         	<ul class="dropdown-menu">
+					            <li><a href="../Relatorio/projetosCategoria.php">Projetos por Categoria</a></li>
+					          </ul>
+					        </li>
+						</li>
+					<?php 
+					} 
+					?>
 				</ul>
 				<form class="navbar-form navbar-left" method="POST" action="../Projeto/busProjApr.php">
 			        <div class="form-group">
