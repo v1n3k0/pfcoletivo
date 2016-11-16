@@ -84,6 +84,7 @@
 					        	<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Relatório <span class="caret"></span></a>
 					         	<ul class="dropdown-menu">
 					            <li><a href="../Relatorio/projetosCategoria.php">Projetos por Categoria</a></li>
+					            <li><a href="../Relatorio/buscarProjetoAprovado.php">Investimentos Financeiros</a></li>
 					          </ul>
 					        </li>
 						</li>
