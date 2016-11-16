@@ -26,7 +26,7 @@
 $cod= $_GET['cod'];
 $_SESSION["codigo"] = $cod;
 
-$result = mysqli_query($con, "SELECT * FROM projeto WHERE codigo = '$cod'");
+$result = mysqli_query($con, "SELECT * FROM projeto WHERE codigo = '$cod' and status = 'aprovado'");
 
 ?>
 <div class="row">
@@ -85,7 +85,7 @@ $result = mysqli_query($con, "SELECT * FROM projeto WHERE codigo = '$cod'");
 					<p class="bg-info"><b> Nenhum projeto encontrado</b></p>				
 				<?php
 				}
-			}
+			} 
 			?>
 		</div>
 	</div>

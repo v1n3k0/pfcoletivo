@@ -142,7 +142,7 @@ if(isset($_GET['categoria']))
 							</td>						
 						</tr>
 						
-						<?php
+						<?php 
 					}
 					?></table> <?php	
 				}else

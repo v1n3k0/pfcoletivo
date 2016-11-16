@@ -140,7 +140,7 @@ if(isset($_GET['categoria']))
 								<div class="form-group">
 								<a class="btn btn-default btn-xs" <?php if( $_SESSION['tipo'] == "avaliador"){?> href="avaliarProj.php?cod=<?php echo $projeto->codigo; ?>" role="button"><?php }else{ ?> disabled <?php }?><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Avaliar</a>
 								
-								<a class="btn btn-default btn-xs" href="dadosProjCan.php?cod=<?php echo $projeto->codigo; ?>" role="button"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Alterar</a>
+								<a class="btn btn-default btn-xs" <?php if( $_SESSION['tipo'] == "gestor"){?> href="dadosProjCan.php?cod=<?php echo $projeto->codigo; ?>" role="button"><?php }else{ ?> disabled <?php }?><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Alterar</a>
 								</div>
 								<div class="form-group">
 								<?php
