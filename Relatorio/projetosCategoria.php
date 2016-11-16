@@ -73,7 +73,7 @@ if(isset($_GET['categoria']))
 </div>
 <div class="row ">
 	<div class="col-md-12 col-md-offset-0">			
-		
+		<div class="col-md-4">
 			<?php 
 			$aux =0;
 			if(isset($result))
@@ -93,6 +93,7 @@ if(isset($_GET['categoria']))
 						$categoria_p ="Pequenas Obras";
 					}
 					?>
+
 					<div class="panel panel-primary">
 		  			<div class="panel-heading"><?php echo $categoria_p ?></div>
 					<table class="table table-striped">
@@ -176,17 +177,23 @@ if(isset($_GET['categoria']))
 						
 								<?php
 							}
-					?>
-					<tr>
-						<td class="col-md-6">
-							Total
-						</td>
-						<td class="col-md-6">
-							<?php echo $total ?>
-						</td>
-					</tr>
-					</table> 
-					</div>
+							?>
+							<tr>
+								<td class="col-md-6">
+									Total
+								</td>
+								<td class="col-md-6">
+									<?php echo $total ?>
+								</td>
+							</tr>
+							</table> 
+							</div>
+							<div class="panel panel-primary">
+					  			<div class="panel-heading">Pesquisa</div>
+					  			<div class="panel-body">
+					  				<img src="graficoCategoria.php?cod_cat=1" class="img-responsive"/>
+					  			</div>
+				  			</div>
 						<?php
 						}
 						?>
@@ -236,7 +243,7 @@ if(isset($_GET['categoria']))
 							</tr>
 							</table> 
 							</div>
-								<?php
+						<?php
 						}
 						?>
 					<?php
@@ -386,6 +393,19 @@ if(isset($_GET['categoria']))
 						}	
 					}
 					?>
+			</div>
+			<?php if(isset($_GET['categoria'])){ ?>
+			<div class="col-md-8">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h3 class="panel-title">Gráfico</h3>
+					</div>
+					<div class="panel-body">
+						<img src="graficoCategoria.php" class="img-responsive"/>
+					</div>
+				</div>
+			</div>
+			<?php } ?>
 		</div>
 	</div>
 </div>

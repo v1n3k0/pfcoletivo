@@ -10,8 +10,7 @@ $dado = array();
 while($financiar = mysqli_fetch_object($resultFinanciar)){
 	$resultUsuario = mysqli_query($con, "SELECT * FROM usuario WHERE cpf = '$financiar->cpf_fk'");
 	$usuario = mysqli_fetch_object($resultUsuario);
-	$array = array($usuario->nome, $financiar->valor_doado);
-	$dado[] = $array;
+	$dado[] = array($usuario->nome, $financiar->valor_doado);
 }
 #Instancia o objeto e setando o tamanho do grafico na tela
 $plot = new PHPlot(600,350);

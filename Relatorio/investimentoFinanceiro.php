@@ -128,9 +128,7 @@ $result = mysqli_query($con, "SELECT * FROM projeto WHERE codigo = '$cod'");
 				<h3 class="panel-title">Gráfico</h3>
 			</div>
 			<div class="panel-body">
-				<div class="col-md-12">
-					<img src="graficoInvestimento.php?cod=<?php echo $cod; ?>" class="img-responsive"/>			 
-				</div>
+				<img src="graficoInvestimento.php?cod=<?php echo $cod; ?>" class="img-responsive"/>
 			</div>
 		</div>
 	</div>
