@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="utf-8">
 	<title>UNIFunda</title>
 
 	<link rel="stylesheet"  href="../css/bootstrap.css">
