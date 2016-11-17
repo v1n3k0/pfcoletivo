@@ -188,12 +188,6 @@ if(isset($_GET['categoria']))
 							</tr>
 							</table> 
 							</div>
-							<div class="panel panel-primary">
-					  			<div class="panel-heading">Pesquisa</div>
-					  			<div class="panel-body">
-					  				<img src="graficoCategoria.php?cod_cat=1" class="img-responsive"/>
-					  			</div>
-				  			</div>
 						<?php
 						}
 						?>
