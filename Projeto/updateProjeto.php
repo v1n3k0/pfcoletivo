@@ -8,23 +8,6 @@
 		$cod_cri = $_GET['cri'];
 	
 	
-	if((isset($_POST['desc_cri'])) || (isset($_POST['nota_cri'])))
-	{		
-		if(isset($_POST['desc_cri']))
-			$desc_cri  = $_POST['desc_cri'];
-		if(isset($_POST['nota_cri']))
-			$nota_cri  = $_POST['nota_cri'];
-		if(($desc_cri != NULL) && ($nota_cri != NULL)){
-			mysqli_query($con, "UPDATE critproj set comentario='$desc_cri', nota='$nota_cri' where cod_cri_fk='$cod_cri' and cod_p_fk= '$cod'");
-			header("Location: dadosProjCan.php?cod=$cod&success=Nota e descrição alterados com sucesso!");
-		}elseif(($desc_cri != NULL)){
-			mysqli_query($con, "UPDATE critproj set comentario='$desc_cri'where cod_cri_fk='$cod_cri' and cod_p_fk= '$cod'");
-			header("Location: dadosProjCan.php?cod=$cod&success=Descrição alterada com sucesso!");		
-		}elseif(($nota_cri != NULL)){
-			mysqli_query($con, "UPDATE critproj set nota= '$nota_cri' where cod_cri_fk='$cod_cri' and cod_p_fk= '$cod'");
-			header("Location: dadosProjCan.php?cod=$cod&success=Nota alterada com sucesso!");			
-		}
-	}
 
 	if(isset($_POST['url']))
 	{		

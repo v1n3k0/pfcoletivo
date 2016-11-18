@@ -1,6 +1,13 @@
 <?php include_once("../header.php") ?>
 <?php include_once("../validar.php") ?>
 
+<?php 
+
+if(isset($_GET['cod'])){
+	$cod=$_GET['cod'];
+	$_SESSION["codigo"] = $cod;
+}
+?>
 <div class="mensagme text-center col-md-12">
 	<?php 
 
@@ -20,12 +27,48 @@
 
 	?>
 </div>
+	<?php if(isset($_GET['cod']))
+	$cod=$_GET['cod']; ?>
+<script language="JavaScript" type="text/javascript">
+<!--
+  function fFun(vVal)
+{
+	//Trocando o nome
+	
+    var aux = document.getElementById('qtdcrit').value;
+    var peso = document.getElementById('qtdpeso').value;
+    
+    var crit = (aux *1)+100;
 
+   
+    var cri;
+    var media = 0;
+    var med;
+    while(aux > 0){
+    	med =document.getElementById(aux).value * 1;
+    	cri =document.getElementById(crit).value * 1;
+    	<?php 
+			$criproj = mysqli_query($con, "SELECT * FROM critproj WHERE cod_p_fk = '$cod' and cod_cri_fk ='candidato'");
+
+    	?>
+    	media = med  + media;
+    	aux--;
+    	crit--;
+    }
+    media = media/peso;
+
+    if(media >= 8){
+    	document.getElementById('onbot').value='Aprovar';
+	}else if (media <8){
+		document.getElementById('onbot').value='Reprovar';
+	}
+}
+
+//-->
+
+</script>
 <?php 
 
-if(isset($_GET['cod']))
-	$cod=$_GET['cod'];
-$_SESSION["codigo"] = $cod;
 
 $result = mysqli_query($con, "SELECT * FROM projeto WHERE codigo = '$cod' and status ='candidato'");
 
@@ -114,52 +157,72 @@ $result = mysqli_query($con, "SELECT * FROM projeto WHERE codigo = '$cod' and st
 					if($projeto = mysqli_fetch_object($result))
 					{
 						$cod_cat = $projeto->cod_cat_fk;
+						$aux=0;
+						$cri=100;
+						$desc=1000;
+						$peso=0;
 						$criter =  mysqli_query($con, "SELECT * FROM criterio WHERE cod_cat_fk = '$cod_cat'");
+						?><form class="form-horizontal" method="POST" action="avalProjeto.php?codigo=<?php echo $projeto->codigo?>">
+						 <?php
 						while($criterio = mysqli_fetch_object($criter))
 						{
+							$aux++;
+							$cri++;
+							$desc++;
+							$peso= $peso + $criterio->peso;
 					?>
 						<tr>
 							<td>
 								<span class="detalhes"><?php echo $criterio->nome_cri ?></span>
 							</td>
 							<td>
-								<span class="detalhes"><?php echo $criterio->peso ?></span>
+								<span class="detalhes" ><?php echo $criterio->peso ?></span>
 							</td>
+							<input type="hidden" name="<?php echo $cri ?>" id="<?php echo $cri ?>" value="<?php echo $criterio->cod_cri ?>" ">
+							
 							<td>
 								<span class="detalhes"><?php echo $criterio->descricao ?></span>
 							</td>
-							<form class="form-horizontal" method="POST" action="updateProjeto.php?codigo=<?php echo $projeto->codigo; ?>&cri=<?php echo $criterio->cod_cri; ?>">
+							
 								<td>
-										<div class="col-md-12">
-											<select class="form-control" name="nota">
+										<div class="col-md-7">
+											<select class="form-control" name="<?php echo $aux ?>" id="<?php echo $aux ?>" onchange="fFun(this)">
 												<option value="0">0</option> 
-												<option value="1">1</option> 
-												<option value="2">2</option> 
-												<option value="3">3</option> 
-												<option value="4">4</option> 
-												<option value="5">5</option>
-												<option value="6">6</option> 
-												<option value="7">7</option> 
-												<option value="8">8</option> 
-												<option value="9">9</option> 
-												<option value="10">10</option>
+												<option value="<?php echo $criterio->peso * 1 ?>">1</option> 
+												<option value="<?php echo $criterio->peso * 2 ?>">2</option> 
+												<option value="<?php echo $criterio->peso * 3 ?>">3</option> 
+												<option value="<?php echo $criterio->peso * 4 ?>">4</option> 
+												<option value="<?php echo $criterio->peso * 5 ?>">5</option>
+												<option value="<?php echo $criterio->peso * 6 ?>">6</option> 
+												<option value="<?php echo $criterio->peso * 7 ?>">7</option> 
+												<option value="<?php echo $criterio->peso * 8 ?>">8</option> 
+												<option value="<?php echo $criterio->peso * 9 ?>">9</option> 
+												<option value="<?php echo $criterio->peso * 10 ?>">10</option>
 										</select>
 										</div>
 								</td>
 								<td>
 										<div class="col-md-12">
-											<textarea class="form-control" rows="3" name="desc_nota" size=255 placeholder="Descrição da avalicação"></textarea>
+											<textarea class="form-control" rows="3" name="<?php echo $desc ?>" size=255 placeholder="Descrição da avalicação"></textarea>
 										</div>
-								<td>
-										<div class="col-md-12">
-									     <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-floppy-save" aria-hidden="true"></span> Salvar</button>
-									    </div>
-								</td>
-							</form>
+								
+															
 						</tr>
 						
 						<?php
 						}
+						?>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td>
+							<div class="col-md-12">
+								<input type="hidden" name="qtcriterio"  value="<?php echo $aux ?>">
+								<input type="submit" id="onbot" value="Reprovar" class="btn btn-primary" onclick="submit" aria-hidden="true">
+							</div>
+						</td>
+						</form><?php
 					}
 
 					?>	
@@ -176,9 +239,8 @@ $result = mysqli_query($con, "SELECT * FROM projeto WHERE codigo = '$cod' and st
 				
 				?>
 			</div>
-			<div class="col-md-1 col-md-offset-10">
-				<a class="btn btn-primary" href="avalProjeto.php?codigo=<?php echo $projeto->codigo; ?>"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span> Aprovar</a>
-			</div>
+			<input type="hidden" name="qtdcrit" id="qtdcrit" value="<?php echo $aux ?>">
+			<input type="hidden" name="qtdpeso" id="qtdpeso" value="<?php echo $peso ?>">
 		</div>
 	</div>
 </div>
